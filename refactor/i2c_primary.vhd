@@ -7,6 +7,7 @@ entity i2c_primary is
         ARST_LVL : std_logic := '0';
         SELF_I2C_ADDR : std_logic_vector(6 downto 0) := "1100110";
         SELF_I2C_MODE : std_logic := '0'; -- 0 = WRITE, 1 = READ
+        DATA_VECTOR : std_logic_vector(39 downto 0) := x"48656c6c6f" -- "Hello"
     );
 	port (
         
@@ -195,6 +196,7 @@ begin
                         end if;
                     when writetx_I2C =>
                         -- passar so uns 8 primero byte
+                        for 
                         
                         
 

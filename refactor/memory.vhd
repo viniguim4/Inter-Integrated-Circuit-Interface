@@ -37,14 +37,14 @@ begin
     end if;
   end process RamProc;
 
-  dump_p : process(m_start_dump)
+  dump_p : process(m_start_dump, m_clock)
     begin
       if m_reset = '0' then
         m_start_dump <= '0';
       elsif(rising_edge(m_start_dump)) then
             for ii in 0 to 2**m_address'length-1 loop
                 m_data_dump <= ram(ii);
-                wait for 10 ns;
+                wait until rising_edge(m_clock);
             end loop;
       end if;
     end process dump_p;
