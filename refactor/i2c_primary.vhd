@@ -8,6 +8,7 @@ entity i2c_primary is
         SELF_I2C_ADDR : std_logic_vector(6 downto 0) := "1100110";
         SELF_I2C_MODE : std_logic := '0'; -- 0 = WRITE, 1 = READ
         DATA_VECTOR : std_logic_vector(39 downto 0) := x"48656c6c6f" -- "Hello"
+        REQ_REG_VECTOR : std_logic_vector(39 downto 0) := x"0304050607" -- "Hello"
     );
 	port (
         
@@ -138,13 +139,6 @@ begin
             sda_padoen_o  => sda_padoen_o
         );
 
-    preescaler : process(p_clock)
-    begin
-        if rising_edge(p_clock) then
-            wb_adr_i <= "000";
-            wb_dat_i <= "00111111";  -- SET LOW PRESCALE TO 3F =  63 to 100 kHz
-        end if;
-    end process preescaler;
     -- instacia componentes
     statemachine : block
         type states is (set_preescaler, en_I2C, start_I2C, addressing_I2C, writetx_I2C, readtx_I2C, stop_I2C, idle);
@@ -196,13 +190,49 @@ begin
                         end if;
                     when writetx_I2C =>
                         -- passar so uns 8 primero byte
-                        for 
-                        
-                        
-
-                    
-
-        
+                        for i in DATA_VECTOR'lenght/8 loop
+                            wb_we_i <= '1';
+                            wb_data_i <= DATA_VECTOR(i+7 downto i);
+                            wait until rising_edge(wb_ack_o);
+                            wb_adr_i <= "100"; -- register of byte to be transmited
+                            wb_dat_i <= "00010000";
+                            wait until rising_edge(wb_ack_o);
+                            wb_we_i <= '0';
+                            wait until rising_edge(sc_done_o);
+                        end loop;
+                        c_state <= stop_I2C;
+                    when readtx_I2C =>
+                        for i in REQ_REG_VECTOR'lenght/8 loop
+                            -- write to scl reg number
+                            wb_we_i <= '1';
+                            wb_data_i <= REQ_REG_VECTOR(i+7 downto i);
+                            wait until rising_edge(wb_ack_o);
+                            wb_adr_i <= "100"; -- register of byte to be transmited
+                            wb_dat_i <= "00010000";
+                            wait until rising_edge(wb_ack_o);
+                            wb_we_i <= '0';
+                            wait until rising_edge(sc_done_o);
+                            --listen to secondary answer
+                            wb_we_i <= '1';
+                            wb adr_i <= "100"; -- register of byte to be transmited
+                            wb_dat_i <= "00100000"; -- read
+                            wait until rising_edge(wb_ack_o);
+                            wb_we_i <= '0';
+                            wait until rising_edge(sc_done_o);
+                        end loop;
+                        c_state <= stop_I2C;
+                    when stop_I2C =>
+                        wb_we_i <= '1';
+                        wb_adr_i <= "100"; --commandregister
+                        wb_dat_i <= "01000000"; -- stop condition (2) XSXXXXXX
+                        wait until rising_edge(wb_ack_o);
+                        wb_we_i <= '0';
+                        wait until rising_edge(sc_done_o);
+                        c_state <= idle;
+                    when idle =>
+                        c_state <= idle;
+                end case;
+            end if;     
         end process nxt_state_decoder;
     end block statemachine;
 
