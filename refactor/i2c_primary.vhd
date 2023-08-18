@@ -1,14 +1,12 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use IEEE.NUMERIC_STD.ALL;
+use ieee.std_logic_arith.all;
 
 entity i2c_primary is
     generic(
         ARST_LVL : std_logic := '0';
         SELF_I2C_ADDR : std_logic_vector(6 downto 0) := "1100110";
         SELF_I2C_MODE : std_logic := '0'; -- 0 = WRITE, 1 = READ
-        DATA_VECTOR : std_logic_vector(39 downto 0) := x"48656c6c6f"; -- "Hello"
-        REQ_REG_VECTOR : std_logic_vector(39 downto 0) := x"0304050607" -- "Hello"
     );
 	port (
         
@@ -16,7 +14,7 @@ entity i2c_primary is
         p_reset   : in  std_logic := not ARST_LVL;
         
         --memory
-        m_start_dump : in  std_logic := '0';
+        m_start_dump : in  std_logic;
         m_data_dump  : out std_logic_vector (7 downto 0);
         
         -- wishbone signals
@@ -39,8 +37,8 @@ architecture structural of i2c_primary is
         
             -- dump memory
             m_start_dump : in  std_logic;
-            m_data_dump  : out std_logic_vector (7 downto 0)
-        );
+            m_data_dump  : out std_logic_vector (7 downto 0);
+        )
     end component memory;
 
     component i2c_master_top is
@@ -83,6 +81,8 @@ architecture structural of i2c_primary is
         --memory
     signal m_write_e : std_logic := '0';
     signal m_address : std_logic_vector (7 downto 0) := (others => '0');
+    signal m_start_dump : std_logic := '0';
+    signal m_data_dump  : std_logic_vector (7 downto 0);
         --wishbone
     signal wb_rst_i : std_logic := '0';
     signal wb_adr_i : std_logic_vector(2 downto 0) := (others => '0');
@@ -137,6 +137,13 @@ begin
             sda_padoen_o  => sda_padoen_o
         );
 
+    preescaler : process(p_clock)
+    begin
+        if rising_edge(p_clock) then
+            wb_adr_i <= "000";
+            wb_dat_i <= "00111111";  -- SET LOW PRESCALE TO 3F =  63 to 100 kHz
+        end if;
+    end process preescaler;
     -- instacia componentes
     statemachine : block
         type states is (set_preescaler, en_I2C, start_I2C, addressing_I2C, writetx_I2C, readtx_I2C, stop_I2C, idle);
@@ -151,7 +158,7 @@ begin
                     when set_preescaler =>
                         wb_we_i <= '1';
                         wb_adr_i <= "000"; -- LO preescaler register address in wb
-                        preescaler_aux <= std_logic_vector(to_unsigned(((1/((CLK_PERIOD/ns) * I2C_FREQ * 5)) - 1), 16)); -- 32MHz / 100kHz = 320
+                        preescaler_aux <= (1/(CLK_PERIOD * I2C_FREQ * 5)) - 1; -- 32MHz / 100kHz = 320
                         wb_dat_i <= preescaler_aux(7 downto 0); -- SET LOW PRESCALE TO 3F =  63 to 100 kHz
                         wait until rising_edge(wb_ack_o);
                         wb_adr_i <= "001"; -- HI preescaler register address in wb
@@ -173,8 +180,8 @@ begin
                         wait until rising_edge(wb_ack_o);
                         wb_we_i <= '0';
                         wait until rising_edge(sc_done_o);
-                        c_state <= addressing_I2C;
-                    when addressing_I2C =>
+                        c_state <= transaction_I2C;
+                    when addresing_I2C =>
                         wb_we_i <= '1';
                         wb_adr_i <= "011"; -- register of byte to be transmited
                         wb_dat_i <= i2c_addr_i & i2c_read_e; -- address of slave AND RW BIT
@@ -188,57 +195,12 @@ begin
                         end if;
                     when writetx_I2C =>
                         -- passar so uns 8 primero byte
-                        for i in unsigned(DATA_VECTOR'lenght/8) loop
-                            wb_we_i <= '1';
-                            wb_data_i <= DATA_VECTOR(i+7 downto i);
-                            wait until rising_edge(wb_ack_o);
-                            wb_adr_i <= "100"; -- register of byte to be transmited
-                            wb_dat_i <= "00010000";
-                            wait until rising_edge(wb_ack_o);
-                            wb_we_i <= '0';
-                            wait until rising_edge(sc_done_o);
-                        end loop;
-                        c_state <= stop_I2C;
-                    when readtx_I2C =>
-                        for i in unsingned(REQ_REG_VECTOR'lenght/8) loop
-                            -- write to sda reg number
-                            wb_we_i <= '1';
-                            wb_data_i <= REQ_REG_VECTOR(i+7 downto i);
-                            wait until rising_edge(wb_ack_o);
-                            wb_adr_i <= "100"; -- register of byte to be transmited
-                            wb_dat_i <= "00010000";
-                            wait until rising_edge(wb_ack_o);
-                            wb_we_i <= '0';
-                            wait until rising_edge(sc_done_o);
-                            --listen to secondary answer
-                            wb_we_i <= '1';
-                            wb_dat_i <= "00100000"; -- read
-                            wait until rising_edge(wb_ack_o);
-                            wb_we_i <= '0';
-                            wait until rising_edge(sc_done_o);
-                            wb_we_i <= '1';
-                            -- READ FROM RXR REGISTER FAULT
-                            m_write_e <= '1';
-                            wb_adr_i <= "011";
-                            wait until rising_edge(wb_ack_o);
-                            wb_we_i <= '0';
-                            m_datain <= wb_dat_o;
-                            wait until rising_edge(wb_ack_o);
-                            m_write_e <= '0';
-                        end loop;
-                        c_state <= stop_I2C;
-                    when stop_I2C =>
-                        wb_we_i <= '1';
-                        wb_adr_i <= "100"; --commandregister
-                        wb_dat_i <= "01000000"; -- stop condition (2) XSXXXXXX
-                        wait until rising_edge(wb_ack_o);
-                        wb_we_i <= '0';
-                        wait until rising_edge(sc_done_o);
-                        c_state <= idle;
-                    when idle =>
-                        c_state <= idle;
-                end case;
-            end if;     
+                        
+                        
+
+                    
+
+        
         end process nxt_state_decoder;
     end block statemachine;
 
