@@ -3,25 +3,25 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity tb_primary is
-    
 end entity;
 
 architecture tb of tb_primary is
+
     component i2c_primary is
         port ( 
-        p_clock   : in  std_logic;
-        p_reset   : in  std_logic := not ARST_LVL;
-        
-        --memory
-        m_start_dump : in  std_logic;
-        m_data_dump  : out std_logic_vector (7 downto 0);
-        
-        -- wishbone signals
-        i2c_addr_i    : in std_logic_vector(6 downto 0) := SELF_I2C_ADDR ;  -- i2c addressed
-        i2c_read_e : in  std_logic := SELF_I2C_MODE; -- 0 = WRITE, 1 = READ
+            p_clock   : in  std_logic;
+            p_reset   : in  std_logic;
+            
+            --memory
+            m_start_dump : in  std_logic;
+            m_data_dump  : out std_logic_vector (7 downto 0);
+            
+            -- wishbone signals
+            i2c_addr_i    : inout std_logic_vector(6 downto 0);  -- i2c addressed
+            i2c_read_e : inout  std_logic; -- 0 = WRITE, 1 = READ
 
-		SCL : inout std_logic ;
-		SDA : inout std_logic
+            SCL : inout std_logic ;
+            SDA : inout std_logic
         );
     end component;
 
@@ -33,6 +33,7 @@ architecture tb of tb_primary is
     signal i2c_read_e : std_logic;
     signal SCL : std_logic;
     signal SDA : std_logic;
+    constant periodo : time := 31.25 ns;             -- 32 MHz clock
 
 begin   
 
@@ -47,13 +48,14 @@ begin
         SDA => SDA
     );
 
-    wb_clk_i <= not wb_clk_i after (period / 2);
+    p_clock <= not p_clock after (periodo/2);
 
-    process 
-        begin
-            p_reset <= '1';
-            wait for 250ns;
+    process begin
             p_reset <= '0';
+            wait for 250 ns;
+            p_reset <= '1';
             m_start_dump <= '1';
+            WAIT FOR 1us;
+            wait;
         end process;
 end architecture;
