@@ -158,12 +158,13 @@ architecture structural of i2c_master_byte_ctrl is
  
 	-- signals for shift register
 	signal sr : std_logic_vector(7 downto 0); -- 8bit shift register
-	signal shift, ld : std_logic;
+	signal shift, ld, ld_d4 ,ld_d3,ld_d2, ld_d1 : std_logic;
  
 	-- signals for state machine
 	signal go, host_ack : std_logic;
 	signal dcnt : unsigned(2 downto 0); -- data counter
 	signal cnt_done : std_logic;
+
  
 begin
 	-- hookup bit_controller
@@ -197,7 +198,16 @@ begin
 	-- assign Dout output to shift-register
 	dout <= sr;
 
-	
+	--
+	process (clk)
+	begin
+	  if rising_edge(clk) then
+		ld_d4 <= ld_d3;
+		ld_d3 <= ld_d2;
+		ld_d2 <= ld_d1;
+		ld_d1 <= ld;
+	  end if;
+	end process;
 
 	-- detect first byte addressing
 	first_byte_dtctr: process(clk, nReset)
@@ -223,7 +233,7 @@ begin
 	    elsif (clk'event and clk = '1') then
 	      if (rst = '1') then
 	        sr <= (others => '0');
-	      elsif (ld = '1') then
+	      elsif (ld_d4 = '1') then
 	        sr <= din;
 	      elsif (shift = '1') then
 	        sr <= (sr(6 downto 0) & core_rxd);
@@ -309,7 +319,6 @@ begin
 	                     c_state  <= st_stop;
 	                     core_cmd <= I2C_CMD_STOP;
 	                   end if;
-					   host_ack <= '1';
 	                   ld <= '1';
 	                 end if;
  

@@ -155,7 +155,7 @@ architecture structural of i2c_master_top is
     signal wb_wacc : std_logic;
  
     -- internal acknowledge signal
-    signal iack_o : std_logic;
+    signal iack_o : std_logic := '0';
  
     -- done signal: command completed, clear command register
     signal done : std_logic;
