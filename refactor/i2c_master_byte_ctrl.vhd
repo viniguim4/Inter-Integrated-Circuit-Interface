@@ -309,12 +309,12 @@ begin
 	                   if (start = '1') then
 	                     c_state  <= st_start;
 	                     core_cmd <= I2C_CMD_START;
+					   elsif (write = '1') then
+						 c_state  <= st_write;
+						 core_cmd <= I2C_CMD_WRITE;
 	                   elsif (read = '1') then
 	                     c_state  <= st_read;
 	                     core_cmd <= I2C_CMD_READ;
-	                   elsif (write = '1') then
-	                     c_state  <= st_write;
-	                     core_cmd <= I2C_CMD_WRITE;
 	                   else -- stop
 	                     c_state  <= st_stop;
 	                     core_cmd <= I2C_CMD_STOP;
