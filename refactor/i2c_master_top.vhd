@@ -145,7 +145,7 @@ architecture structural of i2c_master_top is
     signal txr  : std_logic_vector(7 downto 0);      -- transmit register
     signal rxr  : std_logic_vector(7 downto 0);      -- receive register
     signal cr   : std_logic_vector(7 downto 0);      -- command register
-    signal sr   : std_logic_vector(7 downto 0);      -- status register
+    signal sr   : std_logic_vector(7 downto 0) := (others => '0');      -- status register
 	 signal i2c_addr_o    : std_logic_vector(6 downto 0);  -- i2c addressed
  
     -- internal reset signal
