@@ -55,7 +55,10 @@ begin
             wait for 250 ns;
             p_reset <= '1';
             m_start_dump <= '1';
-            WAIT FOR 1us;
+            WAIT FOR 1000 us;
+            p_reset <= '0';
+            wait for 250 ns;
+            p_reset <= '1';
             wait;
         end process;
 end architecture;
