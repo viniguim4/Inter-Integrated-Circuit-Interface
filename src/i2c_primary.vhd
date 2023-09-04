@@ -7,7 +7,7 @@ entity i2c_primary is
   (
     ARST_LVL       : std_logic                     := '0';
     SELF_I2C_ADDR  : std_logic_vector(6 downto 0)  := "0000010";
-    SELF_I2C_MODE  : std_logic                     := '0'; -- 0 = WRITE, 1 = READ
+    SELF_I2C_MODE  : std_logic                     := '1'; -- 0 = WRITE, 1 = READ
     DATA_VECTOR    : std_logic_vector(39 downto 0) := x"48656c6c6f"; -- "Hello"
     REQ_REG_VECTOR : std_logic_vector(39 downto 0) := x"0706050403" -- "Hello"
   );
@@ -159,9 +159,8 @@ begin
       -- instacia componentes
       statemachine : block
         type states is (set_preescaler_lo, set_preescaler_hi, en_I2C, start_I2C, start_I2C_w, addressing_I2C,
-          addressing_I2C_w, writetx_I2C, writetx_I2C_b, writetx_I2C_c, readtx_I2C, readtx_I2C_b,
-          readtx_I2C_c, readtx_I2C_d, readtx_I2C_e, readtx_I2C_f, readtx_I2C_g, stop_I2C, stop_I2C_b,
-          idle_for_address, idle, idle_stop);
+          addressing_I2C_w, writetx_I2C, writetx_I2C_b, writetx_I2C_c, stop_I2C, stop_I2C_b,
+          set_read_mode, acquire_data, send_ack, w_datas, idle_for_address, idle, idle_stop);
         signal c_state        : states;
         signal callback_state : states;
 
@@ -169,9 +168,12 @@ begin
         nxt_state_decoder : process (p_clock, p_reset)
         begin
           if p_reset = ARST_LVL then
+            data_vector_s   <= DATA_VECTOR;
+            req_reg_vector_s <= REQ_REG_VECTOR;
             c_state <= set_preescaler_lo;
           elsif rising_edge(p_clock) then
             case c_state is
+
               when set_preescaler_lo =>
                 wb_we_i  <= '1';
                 wb_adr_i <= "000"; -- LO preescaler register address in wb
@@ -182,6 +184,7 @@ begin
                 else
                   c_state <= set_preescaler_lo;
                 end if;
+
               when set_preescaler_hi =>
                 wb_we_i  <= '1';
                 wb_adr_i <= "001"; -- HI preescaler register address in wb
@@ -192,6 +195,7 @@ begin
                 else
                   c_state <= set_preescaler_hi;
                 end if;
+
               when en_I2C =>
                 wb_we_i  <= '1';
                 wb_adr_i <= "010"; -- control register in wb
@@ -202,6 +206,7 @@ begin
                 else
                   c_state <= en_I2C;
                 end if;
+
               when start_I2C =>
                 wb_we_i  <= '1';
                 wb_adr_i <= "100"; --commandregister
@@ -212,18 +217,21 @@ begin
                 else
                   c_state <= start_I2C;
                 end if;
+
               when start_I2C_w =>
                 if (sc_done_o = '1') then
                   c_state <= idle_for_address;
                 else
                   c_state <= start_I2C_w;
                 end if;
+
               when idle_for_address =>
                 if (wb_ack_o = '1') then
                   c_state <= addressing_I2C;
                 else
                   c_state <= idle_for_address;
                 end if;
+
               when addressing_I2C =>
                 wb_we_i  <= '1';
                 wb_adr_i <= "011"; -- register of byte to be transmited
@@ -234,32 +242,37 @@ begin
                 else
                   c_state <= addressing_I2C;
                 end if;
+
               when addressing_I2C_w =>
                 if (sc_done_o = '1') then
-                  counter <= 0;
                   if i2c_read_e = '0' then
-                    callback_state <= writetx_I2C;
-                    c_state        <= idle;
+                    counter <= data_vector_s'length;
                   else
-                    callback_state <= readtx_I2C;
-                    c_state        <= idle;
+                    counter <= req_reg_vector_s'length;
                   end if;
+                  callback_state <= writetx_I2C;
+                  c_state        <= idle;
                 else
                   c_state <= addressing_I2C_w;
                 end if;
+
               when writetx_I2C =>
-                -- passar so o primero byte
                 wb_we_i  <= '1';
                 wb_adr_i <= "011"; -- register of byte to be transmited
-                wb_dat_i <= data_vector_s(7 downto 0);
+                if i2c_read_e = '0' then    -- ESCREVE UM BYTE OU O ENDEREÇO DE REQUISIÇÃO DO REGISTRADOR
+                  wb_dat_i <= data_vector_s(7 downto 0);
+                else
+                  wb_dat_i <= req_reg_vector_s(7 downto 0);
+                end if;
                 if (wb_ack_o = '1') then
                   c_state <= writetx_I2C_b;
                   wb_we_i <= '0';
                 else
                   c_state <= writetx_I2C;
                 end if;
+
               when writetx_I2C_b =>
-                if counter < 40 then
+                if counter > 1 then
                   wb_we_i  <= '1';
                   wb_adr_i <= "100"; -- register of byte to be transmited
                   wb_dat_i <= "00010000";
@@ -271,93 +284,76 @@ begin
                   end if;
                 else
                   c_state <= idle_stop;
-                  counter <= 0;
+                  if i2c_read_e = '0' then
+                    counter <= data_vector_s'length;
+                  else
+                    counter <= req_reg_vector_s'length;
+                  end if;
                 end if;
+
               when writetx_I2C_c =>
                 if (sc_done_o = '1') then
-                  callback_state <= writetx_I2C;
-                  c_state        <= idle;
-                  counter        <= counter + 8;
-                  data_vector_s  <= "00000000" & data_vector_s(39 downto 8);
-                else
-                  c_state <= writetx_I2C_c;
-                end if;
-              when readtx_I2C =>
-                -- write to sda reg number
-                wb_we_i  <= '1';
-                wb_adr_i <= "011"; -- register of byte to be transmited
-                wb_dat_i <= req_reg_vector_s(7 downto 0);
-                if (wb_ack_o = '1') then
-                  c_state <= readtx_I2C_b;
-                  wb_we_i <= '0';
-                else
-                  c_state <= readtx_I2C;
-                end if;
-              when readtx_I2C_b =>
-                wb_we_i  <= '1';
-                wb_adr_i <= "100"; -- register of byte to be transmited
-                wb_dat_i <= "00010000";
-                if (wb_ack_o = '1') then
-                  c_state <= readtx_I2C_c;
-                  wb_we_i <= '0';
-                else
-                  c_state <= readtx_I2C_b;
-                end if;
-              when readtx_I2C_c =>
-                if (sc_done_o = '1') then
-                  callback_state <= readtx_I2C_d;
-                  c_state        <= idle;
-                else
-                  c_state <= readtx_I2C_c;
-                end if;
-              when readtx_I2C_d =>
-                wb_we_i  <= '1';
-                wb_dat_i <= "00100000"; -- read
-                if (wb_ack_o = '1') then
-                  c_state <= readtx_I2C_e;
-                  wb_we_i <= '0';
-                else
-                  c_state <= readtx_I2C_d;
-                end if;
-              when readtx_I2C_e =>
-                if (sc_done_o = '1') then
-                  callback_state <= readtx_I2C_f;
-                  c_state        <= idle;
-                else
-                  c_state <= readtx_I2C_e;
-                end if;
-              when readtx_I2C_f =>
-                wb_we_i  <= '1';
-                wb_adr_i <= "011";
-                if (wb_ack_o = '1') then
-                  c_state <= readtx_I2C_g;
-                  wb_we_i <= '0';
-                else
-                  c_state <= readtx_I2C_f;
-                end if;
-              when readtx_I2C_g =>
-                if counter < 40 then
-                  m_write_e <= '1';
-                  m_address <= std_logic_vector(to_unsigned((counter/8), 8));
-                  if (sc_done_o = '1') then
-                    m_write_e        <= '0';
-                    callback_state   <= readtx_I2C;
-                    c_state          <= idle;
-                    counter          <= counter + 8;
-                    req_reg_vector_s <= "00000000" & req_reg_vector_s(39 downto 8);
+                  if i2c_read_e = '0' then
+                    callback_state <= writetx_I2C;
                   else
-                    c_state <= readtx_I2C_g;
+                    callback_state <= set_read_mode; -- NEED A READ MODE TO READ FROM THE SECONDARY REGISTER QUERY
+                  end if;
+                  c_state        <= idle;
+                  counter        <= counter - 8;
+                  if i2c_read_e = '0' then
+                    data_vector_s  <= "00000000" & data_vector_s(39 downto 8);
+                  else
+                    req_reg_vector_s <= "00000000" & req_reg_vector_s(39 downto 8);
                   end if;
                 else
-                  c_state <= stop_I2C;
-                  counter <= 0;
+                    c_state <= writetx_I2C_c;
                 end if;
+              
+              when set_read_mode =>  
+                wb_adr_i <= "100"; -- control register in wb
+                wb_dat_i <= "00100000"; -- Enable I2C read (5)
+                wb_we_i  <= '1';
+                if (wb_ack_o = '1') then
+                  wb_we_i <= '0';
+                  c_state <= acquire_data;
+
+                else
+                  c_state <= set_read_mode;
+                end if;
+
+              when acquire_data =>
+                if (sc_done_o = '1') then
+                  c_state <= send_ack;
+                else
+                  c_state <= acquire_data;
+                end if;  
+              
+              when send_ack =>
+                wb_adr_i <= "011";
+                if (sc_done_o = '1') then
+                    c_state <= w_datas;
+                else
+                    c_state <= send_ack;
+                end if;
+
+              when w_datas =>
+                wb_adr_i <= "011"; -- register of byte to be read
+                m_address <= std_logic_vector(to_unsigned(((req_reg_vector_s'length-counter)/8), 8));
+                m_write_e <= '1';
+                if (wb_ack_o = '1') then
+                  c_state <= writetx_I2C;  -- CALLBACK TO WRITE MODE TO REQUEST THE NEXT REGISTER DATA
+                  m_write_e <= '0';
+                else
+                  c_state <= w_datas;
+                end if;
+
               when idle_stop =>
                 if (wb_ack_o = '1') then
                   c_state <= stop_I2C;
                 else
                   c_state <= idle_stop;
                 end if;
+
               when stop_I2C =>
                 wb_we_i  <= '1';
                 wb_adr_i <= "100"; --commandregister
@@ -368,6 +364,7 @@ begin
                 else
                   c_state <= stop_I2C;
                 end if;
+
               when stop_I2C_b =>
                 if (sc_done_o = '1') then
                   c_state <= idle;
@@ -381,6 +378,7 @@ begin
                 else
                   c_state <= idle;
                 end if;
+
             end case;
           end if;
         end process nxt_state_decoder;
