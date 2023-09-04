@@ -7,7 +7,7 @@ entity i2c_primary is
   (
     ARST_LVL       : std_logic                     := '0';
     SELF_I2C_ADDR  : std_logic_vector(6 downto 0)  := "0000010";
-    SELF_I2C_MODE  : std_logic                     := '1'; -- 0 = WRITE, 1 = READ
+    SELF_I2C_MODE  : std_logic                     := '0'; -- 0 = WRITE, 1 = READ
     DATA_VECTOR    : std_logic_vector(39 downto 0) := x"48656c6c6f"; -- "Hello"
     REQ_REG_VECTOR : std_logic_vector(39 downto 0) := x"0706050403" -- "Hello"
   );
@@ -158,7 +158,7 @@ begin
       wb_cyc_i        <= '1';
       -- instacia componentes
       statemachine : block
-        type states is (set_preescaler_lo, set_preescaler_hi, en_I2C, start_I2C, start_I2C_w, addressing_I2C,
+        type states is (init, set_preescaler_lo, set_preescaler_hi, en_I2C, start_I2C, start_I2C_w, addressing_I2C,
           addressing_I2C_w, writetx_I2C, writetx_I2C_b, writetx_I2C_c, stop_I2C, stop_I2C_b,
           set_read_mode, acquire_data, send_ack, w_datas, idle_for_address, idle, idle_stop);
         signal c_state        : states;
@@ -170,9 +170,15 @@ begin
           if p_reset = ARST_LVL then
             data_vector_s   <= DATA_VECTOR;
             req_reg_vector_s <= REQ_REG_VECTOR;
-            c_state <= set_preescaler_lo;
+            c_state <= init;
           elsif rising_edge(p_clock) then
             case c_state is
+              when init => -- init state for handshake
+                if (wb_ack_o = '1') then 
+                  c_state <= set_preescaler_lo;
+                else
+                  c_state <= init;
+                end if;
 
               when set_preescaler_lo =>
                 wb_we_i  <= '1';

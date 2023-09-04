@@ -163,7 +163,7 @@ begin
       wb_cyc_i        <= '1';
       -- instacia componentes
       statemachine : block
-        type states is (set_preescaler_lo, set_preescaler_hi, en_I2C, w_first_data, w_datas,
+        type states is (init, set_preescaler_lo, set_preescaler_hi, en_I2C, w_first_data, w_datas,
           idle_start, set_read_mode, acquire_first_data, send_ack, acquire_data,
           writetx_I2C, writetx_I2C_b, writetx_I2C_c, idle);
         signal c_state        : states;
@@ -173,10 +173,16 @@ begin
         nxt_state_decoder : process (p_clock, p_reset)
         begin
           if p_reset = ARST_LVL then
-            c_state <= set_preescaler_lo;
+            c_state <= init;
             first_data_acqrd <= '0';
           elsif rising_edge(p_clock) then
             case c_state is
+              when init => -- init state for handshake
+                if (wb_ack_o = '1') then 
+                  c_state <= set_preescaler_lo;
+                else
+                  c_state <= init;
+                end if;
 
               when set_preescaler_lo =>
                   wb_we_i  <= '1';
