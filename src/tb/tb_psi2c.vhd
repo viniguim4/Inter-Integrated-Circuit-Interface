@@ -27,7 +27,7 @@ architecture tb of tb_psi2c is
     signal SCL : std_logic;
     signal SDA : std_logic;
 
-    constant periodo : time := 31.25 ns;             -- 32 MHz clock
+    constant periodo : time := 20 ns;             -- 32 MHz clock
 
 begin   
 
