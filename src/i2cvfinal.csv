@@ -1,0 +1,43 @@
+# Copyright (C) 2023  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+
+# Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+# File: C:\Users\vinic\OneDrive\Documentos\0xgrin\IC\Inter-Integrated-Circuit-Interface\src\i2cvfinal.csv
+# Generated on: Wed Aug 23 17:55:26 2023
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,VREF Group,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
+i2c_addr_i[6],Bidir,,,,,,,,,
+i2c_addr_i[5],Bidir,,,,,,,,,
+i2c_addr_i[4],Bidir,,,,,,,,,
+i2c_addr_i[3],Bidir,,,,,,,,,
+i2c_addr_i[2],Bidir,,,,,,,,,
+i2c_addr_i[1],Bidir,,,,,,,,,
+i2c_addr_i[0],Bidir,,,,,,,,,
+i2c_read_e,Bidir,,,,,,,,,
+m_data_dump[7],Output,,,,,,,,,
+m_data_dump[6],Output,,,,,,,,,
+m_data_dump[5],Output,,,,,,,,,
+m_data_dump[4],Output,,,,,,,,,
+m_data_dump[3],Output,,,,,,,,,
+m_data_dump[2],Output,,,,,,,,,
+m_data_dump[1],Output,,,,,,,,,
+m_data_dump[0],Output,,,,,,,,,
+m_start_dump,Input,PIN_E1,1,B1_N0,,,,,,
+p_clock,Input,PIN_R8,3,B3_N0,,,,,,
+p_reset,Input,PIN_J15,5,B5_N0,,,,,,
+SCL,Bidir,PIN_K15,5,B5_N0,,,,,,
+SDA,Bidir,PIN_J14,5,B5_N0,,,,,,

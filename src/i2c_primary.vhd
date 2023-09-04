@@ -82,7 +82,7 @@ architecture structural of i2c_primary is
   -- SINAIS
   --aux
   constant I2C_FREQ     : integer := 100000; -- 100 kHz
-  constant CLK_PERIOD   : time    := 31.25 ns; -- 32 MHz clock
+  constant CLK_PERIOD   : time    := 20 ns; -- 32 MHz clock
   constant CLK_FREQ     : integer := 1000000000 * ns/CLK_PERIOD; -- 32 MHz
   constant PREESCALER   : integer := CLK_FREQ / (I2C_FREQ * 5) - 1;
   signal preescaler_aux : std_logic_vector(15 downto 0);

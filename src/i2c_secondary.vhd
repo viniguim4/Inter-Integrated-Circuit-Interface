@@ -6,7 +6,7 @@ entity i2c_secondary is
   generic
   (
     ARST_LVL       : std_logic                     := '0';
-    SELF_I2C_ADDR  : std_logic_vector(6 downto 0)  := "1100100";
+    SELF_I2C_ADDR  : std_logic_vector(6 downto 0)  := "1100110";
     SELF_I2C_MODE  : std_logic                     := '1'; -- 0 = WRITE, 1 = READ
     DATA_VECTOR    : std_logic_vector(39 downto 0) := x"0000000001"; -- "Hello"
     REQ_REG_VECTOR : std_logic_vector(39 downto 0) := x"0706050403" -- "Hello"
@@ -83,7 +83,7 @@ architecture structural of i2c_secondary is
   -- SINAIS
   --aux
   constant I2C_FREQ     : integer := 100000; -- 100 kHz
-  constant CLK_PERIOD   : time    := 31.25 ns; -- 32 MHz clock
+  constant CLK_PERIOD   : time    := 20 ns; -- 32 MHz clock
   constant CLK_FREQ     : integer := 1000000000 * ns/CLK_PERIOD; -- 32 MHz
   constant PREESCALER   : integer := CLK_FREQ / (I2C_FREQ * 5) - 1;
   signal preescaler_aux : std_logic_vector(15 downto 0);
