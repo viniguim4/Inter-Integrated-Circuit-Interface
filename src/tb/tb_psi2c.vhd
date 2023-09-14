@@ -24,10 +24,11 @@ architecture tb of tb_psi2c is
     signal start : std_logic := '0';
     signal memorydump1  : std_logic_vector (7 downto 0);
     signal memorydump2    : std_logic_vector(7 downto 0);
+
     signal SCL : std_logic;
     signal SDA : std_logic;
 
-    constant periodo : time := 20 ns;             -- 32 MHz clock
+    constant periodo : time := 20 ns;             -- 50 MHz clock
 
 begin   
 

@@ -275,7 +275,7 @@ begin
                     -- write in memory
                     m_address <= std_logic_vector(to_unsigned((counter/8), 8));
                     m_write_e <= '1';
-                  elsif ((first_data(7 downto 1) = i2c_addr_i ) and (first_data(0) = '0')) then
+                  elsif ((first_data(7 downto 1) = i2c_addr_i ) and (first_data(0) = '1')) then
                     register_addr_read <= wb_data_i;
                   end if;
                   if (wb_ack_o = '1') then
