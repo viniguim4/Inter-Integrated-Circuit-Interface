@@ -92,6 +92,7 @@ architecture structural of i2c_interface_component is
   signal sc_done_o      : std_logic;
   signal first_data     : std_logic_vector(7 downto 0); -- for secondary check address and write/read mode
   signal first_data_acqrd : std_logic := '0'; -- flag to indicate first data is acquired
+  signal reg_component_mode : std_logic := '0'; -- reg to store component mode
   --memory
   signal m_write_e : std_logic                     := '0';
   signal m_address : std_logic_vector (7 downto 0) := (others => '0');
@@ -172,7 +173,7 @@ begin
         signal callback_state : states;
 
       begin
-        nxt_state_decoder : process (p_clock, p_reset, component_mode)
+        nxt_state_decoder : process (p_clock, p_reset)
         begin
           if p_reset = ARST_LVL then
             data_vector_s   <= DATA_VECTOR;
@@ -182,6 +183,7 @@ begin
             case c_state is
               when init => -- init state for handshake
                 if (wb_ack_o = '1') then 
+                  reg_component_mode <= component_mode;
                   c_state <= set_preescaler_lo;
                 else
                   c_state <= init;
@@ -215,23 +217,24 @@ begin
                 wb_dat_i <= "10000000"; -- -- Enable I2C core (7) and disable I2C interrupt (6)
                 if (wb_ack_o = '1') then
                   wb_we_i <= '0';
-                  if (component_mode = '0') then -- primary MODE  
+                  if (reg_component_mode = '0') then -- primary MODE  
                     c_state <= start_I2C;
                   else 
                     c_state <= idle_start;
-						end if;
+						      end if;
                 else
                   c_state <= en_I2C;
                 end if;
             
               when idle_start =>
                 wb_adr_i <= "100";  -- ready busy register
-                if (wb_data_i(6) = '1' and wb_ack_o = '1' and component_mode ='1') then
+                if (wb_data_i(6) = '1' and wb_ack_o = '1' and reg_component_mode ='1') then
                   c_state <= set_read_mode;
-                elsif (component_mode = '0') then
+                elsif (reg_component_mode = '0') then
                   c_state <= start_I2C;
                 else
                   c_state <= idle_start;
+                  reg_component_mode <= component_mode;
                 end if;
             
               when acquire_first_data =>
@@ -293,13 +296,13 @@ begin
               when writetx_I2C =>
                 wb_we_i  <= '1';
                 wb_adr_i <= "011"; -- register of byte to be transmited
-                if component_mode = '0' then
+                if reg_component_mode = '0' then
                   if i2c_read_e = '0' then    -- ESCREVE UM BYTE OU O ENDEREÇO DE REQUISIÇÃO DO REGISTRADOR
                     wb_dat_i <= data_vector_s(7 downto 0);
                   else
                     wb_dat_i <= req_reg_vector_s(7 downto 0);
                   end if;
-                elsif component_mode = '1' then
+                elsif reg_component_mode = '1' then
                     wb_dat_i <= "11100011"; --SIMULATE A DATA READ FROM REGISTER
                 end if;
                 if (wb_ack_o = '1') then
@@ -361,7 +364,7 @@ begin
                   if (component_mode = '0') then
                     c_state <= acquire_data;
                   elsif (component_mode = '1') then
-                    if (first_data_acqrd = '0') then 
+                    if (first_data_acqrd = '0' and i2c_read_e = '1') then 
                         c_state <= acquire_first_data;
                     else
                         c_state <= acquire_data;
