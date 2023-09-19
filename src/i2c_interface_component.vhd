@@ -179,6 +179,7 @@ begin
             data_vector_s   <= DATA_VECTOR;
             req_reg_vector_s <= REQ_REG_VECTOR;
             c_state <= init;
+            reg_component_mode <= '0';
           elsif rising_edge(p_clock) then
             case c_state is
               when init => -- init state for handshake
@@ -313,7 +314,7 @@ begin
                 end if;
 
               when writetx_I2C_b =>
-                if (counter > 1) or (component_mode = '1') then
+                if (counter > 1) or (reg_component_mode = '1') then
                   wb_we_i  <= '1';
                   wb_adr_i <= "100"; -- register of byte to be transmited
                   wb_dat_i <= "00010000";
@@ -334,10 +335,10 @@ begin
 
               when writetx_I2C_c =>
                 if (sc_done_o = '1') then
-                  if component_mode = '1' then
+                  if reg_component_mode = '1' then
                         callback_state <= set_read_mode; -- NEED A READ MODE TO READ FROM THE SECONDARY REGISTER QUERY
                         c_state        <= idle;
-                  elsif component_mode = '0' then
+                  elsif reg_component_mode = '0' then
                     if i2c_read_e = '0' then
                         callback_state <= writetx_I2C;
                     else
@@ -361,9 +362,9 @@ begin
                 wb_we_i  <= '1';
                 if (wb_ack_o = '1') then
                   wb_we_i <= '0';
-                  if (component_mode = '0') then
+                  if (reg_component_mode = '0') then
                     c_state <= acquire_data;
-                  elsif (component_mode = '1') then
+                  elsif (reg_component_mode = '1') then
                     if (first_data_acqrd = '0' and i2c_read_e = '1') then 
                         c_state <= acquire_first_data;
                     else
@@ -377,7 +378,7 @@ begin
               when acquire_data =>
                 if (sc_done_o = '1') then
                   c_state <= send_ack;
-                  if(component_mode = '1') then
+                  if(reg_component_mode = '1') then
                     counter <= counter + 8;
 						end if;
                 else
@@ -387,9 +388,9 @@ begin
               when send_ack =>
                 wb_adr_i <= "011";
                 if (sc_done_o = '1') then
-                  if (component_mode = '0') then
+                  if (reg_component_mode = '0') then
                     c_state <= w_datas;
-                  elsif (component_mode = '1') then 
+                  elsif (reg_component_mode = '1') then 
                     if (first_data_acqrd = '0') then
                         c_state <= w_first_data;
                     else
@@ -412,10 +413,10 @@ begin
 
               when w_datas =>
                 wb_adr_i <= "011"; -- register of byte to be read
-                if (component_mode = '0') then
+                if (reg_component_mode = '0') then
                     m_address <= std_logic_vector(to_unsigned(((req_reg_vector_s'length-counter)/8), 8));
                     m_write_e <= '1';
-                elsif (component_mode = '1') then
+                elsif (reg_component_mode = '1') then
                     if ((first_data(7 downto 1) = i2c_addr_i) and (first_data(0) = '0')) then
                         m_address <= std_logic_vector(to_unsigned((counter/8), 8)); ---- POSIÇAO DE MEMORIADIFERENTE PARA O MODO DE SECUNDARIO?
                         m_write_e <= '1';
@@ -424,7 +425,7 @@ begin
                     end if;
                 end if;
                 if (wb_ack_o = '1') then
-                  if ((component_mode = '0') or ((first_data(7 downto 1) = i2c_addr_i) and (first_data(0) = '1'))) then
+                  if ((reg_component_mode = '0') or ((first_data(7 downto 1) = i2c_addr_i) and (first_data(0) = '1'))) then
                     c_state <= writetx_I2C;  -- CALLBACK TO WRITE MODE TO REQUEST THE NEXT REGISTER DATA
                     m_write_e <= '0';
                   else
