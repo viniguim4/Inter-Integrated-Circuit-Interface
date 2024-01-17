@@ -22,7 +22,7 @@ entity i2c_interface_component is
 
     --memory
     m_start_dump : in std_logic := '0';
-    m_data_dump  : out std_logic_vector (7 downto 0);
+    m_data_dump  : out std_logic;
 
     -- wishbone signals
     i2c_addr_i : in std_logic_vector(6 downto 0); -- i2c addressed
@@ -34,7 +34,7 @@ entity i2c_interface_component is
 end entity i2c_interface_component;
 
 architecture structural of i2c_interface_component is
-  component memory_dump is
+  component memory_dump_serial is
     port
     (
       m_clock   : in std_logic;
@@ -45,9 +45,9 @@ architecture structural of i2c_interface_component is
 
       -- dump memory
       m_start_dump : in std_logic;
-      m_data_dump  : out std_logic_vector (7 downto 0)
+      m_data_dump  : out std_logic
     );
-  end component memory_dump;
+  end component memory_dump_serial;
 
   component i2c_master_top is
     generic
@@ -123,7 +123,7 @@ architecture structural of i2c_interface_component is
 
 begin
 
-  memory : component memory_dump
+  memory : component memory_dump_serial
     port map(
       m_clock      => p_clock,
       m_reset      => p_reset,
@@ -235,7 +235,6 @@ begin
                   c_state <= start_I2C;
                 else
                   c_state <= idle_start;
-                  reg_component_mode <= component_mode;
                 end if;
             
               when acquire_first_data =>

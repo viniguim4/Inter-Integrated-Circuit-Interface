@@ -20,7 +20,7 @@ architecture tb of tb_i2c_component is
 
             --memory
             m_start_dump : in std_logic := '0';
-            m_data_dump  : out std_logic_vector (7 downto 0);
+            m_data_dump  : out std_logic;
 
             -- wishbone signals
             i2c_addr_i : in std_logic_vector(6 downto 0); -- i2c addressed
@@ -35,7 +35,7 @@ architecture tb of tb_i2c_component is
     signal clk   : std_logic := '0';
     signal rst   : std_logic := '0';
     signal start : std_logic := '0';
-    signal memorydump1  : std_logic_vector (7 downto 0);
+    signal memorydump1  : std_logic;
     signal primary : std_logic := '0';
     signal p_addr : std_logic_vector(6 downto 0) := "0000010";
     signal p_mode : std_logic := '1';
@@ -43,7 +43,7 @@ architecture tb of tb_i2c_component is
     signal clk_2 : std_logic := '0';
     signal rst_2 : std_logic := '0';
     signal start_2 : std_logic := '0';
-    signal memorydump2    : std_logic_vector(7 downto 0);
+    signal memorydump2    : std_logic;
     signal secondary : std_logic := '1';
     signal s_addr : std_logic_vector(6 downto 0) := "1100110";
     signal s_mode : std_logic := '0';
