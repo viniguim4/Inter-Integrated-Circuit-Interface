@@ -1,0 +1,366 @@
+library (i2c_interface_component) {
+  comment                        : "";
+  delay_model                    : table_lookup;
+  simulation                     : false;
+  capacitive_load_unit (1,pF);
+  leakage_power_unit             : 1pW;
+  current_unit                   : "1A";
+  pulling_resistance_unit        : "1kohm";
+  time_unit                      : "1ns";
+  voltage_unit                   : "1v";
+  library_features(report_delay_calculation);
+
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20;
+  slew_lower_threshold_pct_fall : 20;
+  slew_upper_threshold_pct_rise : 80;
+  slew_upper_threshold_pct_fall : 80;
+  slew_derate_from_library : 1.0;
+
+
+  nom_process                    : 1.0;
+  nom_temperature                : 100.0;
+  nom_voltage                    : 1.60;
+
+  lu_table_template(template_1) {
+    variable_1 : total_output_net_capacitance;
+    index_1 ("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+  }
+  type ("i2c_addr_i") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 7;
+    bit_from : 6;
+    bit_to : 0;
+  }
+
+  cell ("i2c_interface_component") {
+    interface_timing : true;
+    pin("SCL") {
+      direction : inout;
+      capacitance : 0.0643;
+    }
+    pin("SDA") {
+      direction : inout;
+      capacitance : 0.0833;
+    }
+    pin("component_mode") {
+      direction : input;
+      capacitance : 0.0029;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.50641");
+	}
+	fall_constraint(scalar) {
+          values("-0.63138");
+	}
+      }
+      timing() {
+        related_pin : "p_clock";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("0.53511");
+	}
+	fall_constraint(scalar) {
+          values("0.70339");
+	}
+      }
+    }
+    pin("i2c_read_e") {
+      direction : input;
+      capacitance : 0.0026;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.61226");
+	}
+	fall_constraint(scalar) {
+          values("-0.61981");
+	}
+      }
+      timing() {
+        related_pin : "p_clock";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("1.88405");
+	}
+	fall_constraint(scalar) {
+          values("1.86566");
+	}
+      }
+    }
+    pin("m_data_dump") {
+      direction : output;
+      capacitance : 0.0008;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : rising_edge;
+	cell_rise(template_1) {
+          values("1.19913,1.20456,1.21727,1.24714,1.32749,1.56052,2.24946");
+	}
+	rise_transition(template_1) {
+          values("0.02076,0.02495,0.03680,0.07269,0.18502,0.52185,1.50697");
+	}
+	cell_fall(template_1) {
+          values("1.30236,1.30695,1.31719,1.33827,1.38374,1.49995,1.83507");
+	}
+	fall_transition(template_1) {
+          values("0.01774,0.02074,0.02792,0.04565,0.09385,0.24233,0.69816");
+	}
+      }
+    }
+    pin("m_start_dump") {
+      direction : input;
+      capacitance : 0.0032;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.41851");
+	}
+	fall_constraint(scalar) {
+          values("-0.38041");
+	}
+      }
+      timing() {
+        related_pin : "p_clock";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("1.22360");
+	}
+	fall_constraint(scalar) {
+          values("1.14050");
+	}
+      }
+    }
+    pin("p_clock") {
+      direction : input;
+      clock : true;
+      capacitance : 0.0710;
+      timing() {
+        timing_sense : positive_unate;
+        timing_type : min_clock_tree_path;
+	cell_rise(scalar) {
+          values("1.31993");
+	}
+	cell_fall(scalar) {
+          values("1.07209");
+	}
+      }
+      timing() {
+        timing_sense : positive_unate;
+        timing_type : max_clock_tree_path;
+	cell_rise(scalar) {
+          values("1.31993");
+	}
+	cell_fall(scalar) {
+          values("1.07209");
+	}
+      }
+    }
+    pin("p_reset") {
+      direction : input;
+      capacitance : 0.0022;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.74666");
+	}
+	fall_constraint(scalar) {
+          values("-1.94087");
+	}
+      }
+      timing() {
+        related_pin : "p_clock";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("4.55168");
+	}
+	fall_constraint(scalar) {
+          values("3.32232");
+	}
+      }
+    }
+    bus("i2c_addr_i") {
+      bus_type : i2c_addr_i;
+      direction : input;
+      capacitance : 0.0000;
+    pin("i2c_addr_i[6]") {
+      direction : input;
+      capacitance : 0.0027;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.82720");
+	}
+	fall_constraint(scalar) {
+          values("-0.74878");
+	}
+      }
+      timing() {
+        related_pin : "p_clock";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("2.19397");
+	}
+	fall_constraint(scalar) {
+          values("2.21127");
+	}
+      }
+    }
+    pin("i2c_addr_i[5]") {
+      direction : input;
+      capacitance : 0.0028;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.79037");
+	}
+	fall_constraint(scalar) {
+          values("-0.75357");
+	}
+      }
+      timing() {
+        related_pin : "p_clock";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("1.94295");
+	}
+	fall_constraint(scalar) {
+          values("2.06186");
+	}
+      }
+    }
+    pin("i2c_addr_i[4]") {
+      direction : input;
+      capacitance : 0.0023;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.97975");
+	}
+	fall_constraint(scalar) {
+          values("-0.90300");
+	}
+      }
+      timing() {
+        related_pin : "p_clock";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("2.06936");
+	}
+	fall_constraint(scalar) {
+          values("2.13882");
+	}
+      }
+    }
+    pin("i2c_addr_i[3]") {
+      direction : input;
+      capacitance : 0.0031;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.99243");
+	}
+	fall_constraint(scalar) {
+          values("-0.94946");
+	}
+      }
+      timing() {
+        related_pin : "p_clock";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("2.13550");
+	}
+	fall_constraint(scalar) {
+          values("2.17635");
+	}
+      }
+    }
+    pin("i2c_addr_i[2]") {
+      direction : input;
+      capacitance : 0.0033;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-0.94485");
+	}
+	fall_constraint(scalar) {
+          values("-0.87169");
+	}
+      }
+      timing() {
+        related_pin : "p_clock";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("2.31648");
+	}
+	fall_constraint(scalar) {
+          values("2.33868");
+	}
+      }
+    }
+    pin("i2c_addr_i[1]") {
+      direction : input;
+      capacitance : 0.0032;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-1.03131");
+	}
+	fall_constraint(scalar) {
+          values("-0.95495");
+	}
+      }
+      timing() {
+        related_pin : "p_clock";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("2.23064");
+	}
+	fall_constraint(scalar) {
+          values("2.25055");
+	}
+      }
+    }
+    pin("i2c_addr_i[0]") {
+      direction : input;
+      capacitance : 0.0048;
+      timing() {
+        related_pin : "p_clock";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("-1.03530");
+	}
+	fall_constraint(scalar) {
+          values("-0.97573");
+	}
+      }
+      timing() {
+        related_pin : "p_clock";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("2.34120");
+	}
+	fall_constraint(scalar) {
+          values("2.38022");
+	}
+      }
+    }
+    }
+  }
+
+}

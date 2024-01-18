@@ -1,0 +1,19 @@
+Design Name: i2c_interface_component
+Run Directory: /openlane/designs/i2c_interface_component/runs/test2
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/designs/i2c_interface_component/runs/test2/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openlane/designs/i2c_interface_component/runs/test2/logs/signoff/38-i2c_interface_component.lef.lvs.log
+Number of nets: 12492                      |Number of nets: 12492                      
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /openlane/designs/i2c_interface_component/runs/test2/logs/signoff/41-arc.log
+Pin violations: 136
+Net violations: 91

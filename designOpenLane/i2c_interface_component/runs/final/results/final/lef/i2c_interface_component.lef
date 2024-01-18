@@ -1,0 +1,292 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO i2c_interface_component
+  CLASS BLOCK ;
+  FOREIGN i2c_interface_component ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 620.000 BY 620.000 ;
+  PIN SCL
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.126000 ;
+    ANTENNADIFFAREA 1.782000 ;
+    PORT
+      LAYER met3 ;
+        RECT 616.000 386.280 621.000 386.880 ;
+    END
+  END SCL
+  PIN SDA
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.126000 ;
+    ANTENNADIFFAREA 2.216700 ;
+    PORT
+      LAYER met3 ;
+        RECT 616.000 541.320 621.000 541.920 ;
+    END
+  END SDA
+  PIN component_mode
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met2 ;
+        RECT 516.210 616.000 516.490 621.000 ;
+    END
+  END component_mode
+  PIN i2c_addr_i[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.426000 ;
+    PORT
+      LAYER met3 ;
+        RECT -1.000 541.320 4.000 541.920 ;
+    END
+  END i2c_addr_i[0]
+  PIN i2c_addr_i[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
+    PORT
+      LAYER met3 ;
+        RECT -1.000 386.280 4.000 386.880 ;
+    END
+  END i2c_addr_i[1]
+  PIN i2c_addr_i[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
+    PORT
+      LAYER met3 ;
+        RECT -1.000 231.240 4.000 231.840 ;
+    END
+  END i2c_addr_i[2]
+  PIN i2c_addr_i[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met3 ;
+        RECT -1.000 76.200 4.000 76.800 ;
+    END
+  END i2c_addr_i[3]
+  PIN i2c_addr_i[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.159000 ;
+    PORT
+      LAYER met2 ;
+        RECT 77.370 -1.000 77.650 4.000 ;
+    END
+  END i2c_addr_i[4]
+  PIN i2c_addr_i[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met2 ;
+        RECT 232.390 -1.000 232.670 4.000 ;
+    END
+  END i2c_addr_i[5]
+  PIN i2c_addr_i[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met2 ;
+        RECT 387.410 -1.000 387.690 4.000 ;
+    END
+  END i2c_addr_i[6]
+  PIN i2c_read_e
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met2 ;
+        RECT 542.430 -1.000 542.710 4.000 ;
+    END
+  END i2c_read_e
+  PIN m_data_dump
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met2 ;
+        RECT 309.670 616.000 309.950 621.000 ;
+    END
+  END m_data_dump
+  PIN m_start_dump
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met2 ;
+        RECT 103.130 616.000 103.410 621.000 ;
+    END
+  END m_start_dump
+  PIN p_clock
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.852000 ;
+    PORT
+      LAYER met3 ;
+        RECT 616.000 231.240 621.000 231.840 ;
+    END
+  END p_clock
+  PIN p_reset
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.126000 ;
+    PORT
+      LAYER met3 ;
+        RECT 616.000 76.200 621.000 76.800 ;
+    END
+  END p_reset
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT -6.680 -2.160 -5.080 619.600 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -6.680 -2.160 626.300 -0.560 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -6.680 618.000 626.300 619.600 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 624.700 -2.160 626.300 619.600 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 7.120 -5.460 8.720 622.900 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 160.720 -5.460 162.320 622.900 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 314.320 -5.460 315.920 622.900 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 467.920 -5.460 469.520 622.900 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -9.980 11.640 629.600 13.240 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -9.980 164.820 629.600 166.420 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -9.980 318.000 629.600 319.600 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -9.980 471.180 629.600 472.780 ;
+    END
+  END vccd1
+  PIN vssd1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT -9.980 -5.460 -8.380 622.900 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -9.980 -5.460 629.600 -3.860 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -9.980 621.300 629.600 622.900 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 628.000 -5.460 629.600 622.900 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 10.420 -5.460 12.020 622.900 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 164.020 -5.460 165.620 622.900 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 317.620 -5.460 319.220 622.900 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 471.220 -5.460 472.820 622.900 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -9.980 14.940 629.600 16.540 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -9.980 168.120 629.600 169.720 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -9.980 321.300 629.600 322.900 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT -9.980 474.480 629.600 476.080 ;
+    END
+  END vssd1
+  OBS
+      LAYER li1 ;
+        RECT 0.920 5.355 618.700 612.085 ;
+      LAYER met1 ;
+        RECT 0.920 5.200 618.700 612.240 ;
+      LAYER met2 ;
+        RECT 2.860 615.720 102.850 616.000 ;
+        RECT 103.690 615.720 309.390 616.000 ;
+        RECT 310.230 615.720 515.930 616.000 ;
+        RECT 516.770 615.720 617.220 616.000 ;
+        RECT 2.860 4.280 617.220 615.720 ;
+        RECT 2.860 4.000 77.090 4.280 ;
+        RECT 77.930 4.000 232.110 4.280 ;
+        RECT 232.950 4.000 387.130 4.280 ;
+        RECT 387.970 4.000 542.150 4.280 ;
+        RECT 542.990 4.000 617.220 4.280 ;
+      LAYER met3 ;
+        RECT 4.000 542.320 616.000 612.165 ;
+        RECT 4.400 540.920 615.600 542.320 ;
+        RECT 4.000 387.280 616.000 540.920 ;
+        RECT 4.400 385.880 615.600 387.280 ;
+        RECT 4.000 232.240 616.000 385.880 ;
+        RECT 4.400 230.840 615.600 232.240 ;
+        RECT 4.000 77.200 616.000 230.840 ;
+        RECT 4.400 75.800 615.600 77.200 ;
+        RECT 4.000 5.275 616.000 75.800 ;
+      LAYER met4 ;
+        RECT 27.895 28.055 160.320 596.185 ;
+        RECT 162.720 28.055 163.620 596.185 ;
+        RECT 166.020 28.055 313.920 596.185 ;
+        RECT 316.320 28.055 317.220 596.185 ;
+        RECT 319.620 28.055 467.520 596.185 ;
+        RECT 469.920 28.055 470.820 596.185 ;
+        RECT 473.220 28.055 593.105 596.185 ;
+      LAYER met5 ;
+        RECT 88.900 477.680 441.020 488.700 ;
+        RECT 88.900 324.500 441.020 469.580 ;
+        RECT 88.900 266.100 441.020 316.400 ;
+  END
+END i2c_interface_component
+END LIBRARY
+

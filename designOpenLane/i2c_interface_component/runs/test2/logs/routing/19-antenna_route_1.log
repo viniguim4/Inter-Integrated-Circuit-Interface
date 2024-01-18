@@ -1,0 +1,500 @@
+OpenROAD 6f9b2bb8b808b1bb5831d4525d868212ae50517a 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO]: Reading ODB at '/openlane/designs/i2c_interface_component/runs/test2/tmp/17-i2c_interface_component.odb'…
+define_corners Typical
+read_liberty -corner Typical /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+Reading design constraints file at '/openlane/scripts/base.sdc'…
+[INFO]: Setting output delay to: 2.0
+[INFO]: Setting input delay to: 2.0
+[INFO]: Setting load to: 0.033442
+[INFO]: Setting clock uncertainty to: 0.25
+[INFO]: Setting clock transition to: 0.15
+[INFO]: Setting timing derate to: 5.0 %
+[INFO]: Setting signal min routing layer to: met1 and clock min routing layer to met1. 
+[INFO]: Setting signal max routing layer to: met5 and clock max routing layer to met5. 
+-congestion_iterations 50 -verbose -congestion_report_file /openlane/designs/i2c_interface_component/runs/test2/tmp/routing/groute-congestion.rpt
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0019] Found 420 clock nets.
+[WARNING GRT-0036] Pin SCL is outside die area.
+[WARNING GRT-0036] Pin SDA is outside die area.
+[WARNING GRT-0036] Pin component_mode is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[0] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[1] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[2] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[3] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[4] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[5] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[6] is outside die area.
+[WARNING GRT-0036] Pin i2c_read_e is outside die area.
+[WARNING GRT-0036] Pin m_data_dump is outside die area.
+[WARNING GRT-0036] Pin m_start_dump is outside die area.
+[WARNING GRT-0036] Pin p_clock is outside die area.
+[WARNING GRT-0036] Pin p_reset is outside die area.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 16
+[INFO GRT-0003] Macros: 0
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[INFO GRT-0004] Blockages: 34009
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal     177096         83567          52.81%
+met2       Vertical       132822         87424          34.18%
+met3       Horizontal      88548         61033          31.07%
+met4       Vertical        53298         29574          44.51%
+met5       Horizontal      17672          7068          60.00%
+---------------------------------------------------------------
+
+[INFO GRT-0101] Running extra iterations to remove overflow.
+[INFO GRT-0197] Via related to pin nodes: 51559
+[INFO GRT-0198] Via related Steiner nodes: 3122
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 62383
+[INFO GRT-0112] Final usage 3D: 291487
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1             83567         41694           49.89%             0 /  0 /  0
+met2             87424         42764           48.92%             0 /  0 /  0
+met3             61033         11505           18.85%             0 /  0 /  0
+met4             29574          8298           28.06%             0 /  0 /  0
+met5              7068            77            1.09%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total           268666        104338           38.84%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 953021 um
+[INFO GRT-0014] Routed nets: 12490
+[INFO GRT-0006] Repairing antennas, iteration 1.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 169 antenna violations.
+[INFO GRT-0015] Inserted 243 diodes.
+[INFO GRT-0009] rerouting 8290 nets.
+[WARNING GRT-0036] Pin p_clock is outside die area.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 17
+[INFO GRT-0006] Repairing antennas, iteration 2.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[WARNING ANT-0009] Net _02845_ requires more than 10 diodes per gate to repair violations.
+[INFO GRT-0012] Found 77 antenna violations.
+[INFO GRT-0015] Inserted 124 diodes.
+[INFO GRT-0009] rerouting 599 nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 24
+[INFO GRT-0006] Repairing antennas, iteration 3.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 31 antenna violations.
+[INFO GRT-0015] Inserted 48 diodes.
+[INFO GRT-0009] rerouting 137 nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 21
+[INFO GRT-0006] Repairing antennas, iteration 4.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 6 antenna violations.
+[INFO GRT-0015] Inserted 6 diodes.
+[INFO GRT-0009] rerouting 10 nets.
+[INFO GRT-0001] Minimum degree: 7
+[INFO GRT-0002] Maximum degree: 17
+[INFO GRT-0006] Repairing antennas, iteration 5.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 3 antenna violations.
+[INFO GRT-0015] Inserted 3 diodes.
+[INFO GRT-0009] rerouting 3 nets.
+[INFO GRT-0001] Minimum degree: 12
+[INFO GRT-0002] Maximum degree: 17
+[INFO GRT-0006] Repairing antennas, iteration 6.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 17
+[INFO GRT-0002] Maximum degree: 18
+[INFO GRT-0006] Repairing antennas, iteration 7.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 18
+[INFO GRT-0002] Maximum degree: 19
+[INFO GRT-0006] Repairing antennas, iteration 8.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 19
+[INFO GRT-0002] Maximum degree: 20
+[INFO GRT-0006] Repairing antennas, iteration 9.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 20
+[INFO GRT-0002] Maximum degree: 21
+[INFO GRT-0006] Repairing antennas, iteration 10.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 21
+[INFO GRT-0002] Maximum degree: 22
+[INFO GRT-0006] Repairing antennas, iteration 11.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 22
+[INFO GRT-0002] Maximum degree: 23
+[INFO GRT-0006] Repairing antennas, iteration 12.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 23
+[INFO GRT-0002] Maximum degree: 24
+[INFO GRT-0006] Repairing antennas, iteration 13.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 24
+[INFO GRT-0002] Maximum degree: 25
+[INFO GRT-0006] Repairing antennas, iteration 14.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 25
+[INFO GRT-0002] Maximum degree: 26
+[INFO GRT-0006] Repairing antennas, iteration 15.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 26
+[INFO GRT-0002] Maximum degree: 27
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL          555326.5 u
+legalized HPWL         555326.5 u
+delta HPWL                    0 %
+
+[INFO DPL-0020] Mirrored 4340 instances
+[INFO DPL-0021] HPWL before          555326.5 u
+[INFO DPL-0022] HPWL after           547046.6 u
+[INFO DPL-0023] HPWL delta               -1.5 %
+[INFO]: Setting signal min routing layer to: met1 and clock min routing layer to met1. 
+[INFO]: Setting signal max routing layer to: met5 and clock max routing layer to met5. 
+-congestion_iterations 50 -verbose -congestion_report_file /openlane/designs/i2c_interface_component/runs/test2/tmp/routing/groute-congestion.rpt
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0019] Found 420 clock nets.
+[WARNING GRT-0036] Pin SCL is outside die area.
+[WARNING GRT-0036] Pin SDA is outside die area.
+[WARNING GRT-0036] Pin component_mode is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[0] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[1] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[2] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[3] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[4] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[5] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[6] is outside die area.
+[WARNING GRT-0036] Pin i2c_read_e is outside die area.
+[WARNING GRT-0036] Pin m_data_dump is outside die area.
+[WARNING GRT-0036] Pin m_start_dump is outside die area.
+[WARNING GRT-0036] Pin p_clock is outside die area.
+[WARNING GRT-0036] Pin p_reset is outside die area.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 27
+[INFO GRT-0003] Macros: 0
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vccd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vssd2 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vdda1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vssa1 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vdda2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[WARNING GRT-0040] Net vssa2 has wires outside die area.
+[INFO GRT-0004] Blockages: 34009
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal     177096         83568          52.81%
+met2       Vertical       132822         87424          34.18%
+met3       Horizontal      88548         61033          31.07%
+met4       Vertical        53298         29574          44.51%
+met5       Horizontal      17672          7068          60.00%
+---------------------------------------------------------------
+
+[INFO GRT-0101] Running extra iterations to remove overflow.
+[INFO GRT-0197] Via related to pin nodes: 52091
+[INFO GRT-0198] Via related Steiner nodes: 3107
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 62969
+[INFO GRT-0112] Final usage 3D: 293508
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1             83568         42053           50.32%             0 /  0 /  0
+met2             87424         42884           49.05%             0 /  0 /  0
+met3             61033         11338           18.58%             0 /  0 /  0
+met4             29574          8291           28.03%             0 /  0 /  0
+met5              7068            35            0.50%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total           268667        104601           38.93%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 957230 um
+[INFO GRT-0014] Routed nets: 12490
+Setting global connections for newly added cells…
+Writing OpenROAD database to '/openlane/designs/i2c_interface_component/runs/test2/tmp/routing/19-global_1.odb'…
+Writing layout to '/openlane/designs/i2c_interface_component/runs/test2/tmp/routing/19-global_1.def'…
+Writing routing guides to '/openlane/designs/i2c_interface_component/runs/test2/tmp/routing/19-global_1.guide'…

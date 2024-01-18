@@ -1,0 +1,334 @@
+
+Magic 8.3 revision 416 - Compiled on Tue Jul 25 11:03:51 UTC 2023.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    ubm 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Using technology "sky130A", version 1.0.461-0-gcd1748b
+Reading LEF data from file /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef.
+This action cannot be undone.
+LEF read, Line 78 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 79 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 112 (Message): Unknown keyword "MINENCLOSEDAREA" in LEF file; ignoring.
+LEF read, Line 114 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 115 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 121 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 122 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 123 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 156 (Message): Unknown keyword "MINENCLOSEDAREA" in LEF file; ignoring.
+LEF read, Line 164 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 165 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 167 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 168 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 169 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 206 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 207 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 209 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 210 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 211 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 248 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 249 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 251 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 252 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 253 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 290 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 291 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read: Processed 797 lines.
+Reading DEF data from file /openlane/designs/i2c_interface_component/runs/test3/results/routing/i2c_interface_component.def.
+This action cannot be undone.
+  Processed 4 vias total.
+Cell sky130_fd_sc_hd__diode_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__decap_3 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_ef_sc_hd__decap_12 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__fill_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__decap_8 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__decap_6 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__fill_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__decap_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__tapvpwrvgnd_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__clkbuf_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__buf_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nor3_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or2_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__inv_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and2_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__buf_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nor2_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__clkbuf_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a32o_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or2_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o21ai_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nand2_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a2bb2o_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a211o_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or3_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or4_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a21o_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nor2_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a22o_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a31o_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o21a_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o31a_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and3_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or4b_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nor2_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a221o_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o31a_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__xor2_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or4_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and3b_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or2b_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and2_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nor2b_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o32a_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o22a_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or3b_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__clkbuf_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nand2b_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nand2_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a21oi_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and2b_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nand3_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__buf_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and3b_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nor3_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and4b_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a311o_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a2111o_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a41o_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__mux2_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o311a_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o211a_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o221a_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o21ba_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a211oi_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nand3b_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a21bo_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or2b_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and4_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and4_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o21ba_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__xnor2_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or3_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a31o_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__xnor2_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__xor2_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a21oi_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o2bb2a_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__buf_6 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__clkbuf_16 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__buf_8 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__clkbuf_8 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or4bb_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nand2_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o21bai_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nor4_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a22oi_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a31oi_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__dlymetal6s2s_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nand4b_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nor3b_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and4_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__buf_12 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nand2_8 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or2_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__clkinv_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or4_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or4b_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nor2_8 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or3_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and4bb_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or3b_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__and4bb_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__or4b_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o31ai_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nand4_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__nand4b_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__mux4_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__inv_8 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__mux4_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__inv_6 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__inv_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o211ai_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a211o_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__mux2_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o221a_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a21boi_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o31a_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__o211ai_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__a21boi_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__dfstp_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__dfrtp_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__dfxtp_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__dfxtp_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__dfrtp_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__dfxtp_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__dfrtp_4 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__dfstp_2 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__ebufn_8 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+Cell sky130_fd_sc_hd__dlygate4sd3_1 read from path /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/mag
+  Processed 43808 subcell instances total.
+  Processed 17 pins total.
+  Processed 2 special nets total.
+  Processed 12509 nets total.
+DEF read: Processed 258266 lines.
+Moving label "_00095_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00134_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00165_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00170_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00210_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00220_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00316_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00515_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00548_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00602_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00674_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00692_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00788_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00850_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00884_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_00889_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_01064_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_01326_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_01407_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_01550_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_01619_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_01643_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_01703_" from metal2 to via1 in cell i2c_interface_component.
+Moving label "_01719_" from metal2 to via1 in cell i2c_interface_component.
+Moving label "_02191_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_02309_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_02322_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_02325_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_02330_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_02558_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_02716_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_02754_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_02771_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_02779_" from metal2 to via1 in cell i2c_interface_component.
+Moving label "_02825_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_02843_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_02860_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_02861_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_02900_" from metal3 to via3 in cell i2c_interface_component.
+Moving label "_02921_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_02934_" from metal3 to via3 in cell i2c_interface_component.
+Moving label "_03009_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_03063_" from metal3 to via3 in cell i2c_interface_component.
+Moving label "_03089_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_03164_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_03196_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_03247_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_03265_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_03278_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_03306_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_03312_" from metal2 to via1 in cell i2c_interface_component.
+Moving label "_03313_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_03350_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_03389_" from metal2 to via1 in cell i2c_interface_component.
+Moving label "_03390_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_03459_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_03461_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_03509_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_03560_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_03724_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_03763_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_03775_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_03859_" from metal3 to via3 in cell i2c_interface_component.
+Moving label "_03895_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_03998_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_04007_" from metal3 to via3 in cell i2c_interface_component.
+Moving label "_04150_" from metal3 to via3 in cell i2c_interface_component.
+Moving label "_04195_" from metal3 to via3 in cell i2c_interface_component.
+Moving label "_04196_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_04212_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_04383_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_04429_" from metal3 to via3 in cell i2c_interface_component.
+Moving label "_04440_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_04467_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_04722_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_04778_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_04800_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_04810_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_04933_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_05004_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_05053_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_05270_" from metal2 to via1 in cell i2c_interface_component.
+Moving label "_05283_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_05330_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_05413_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_05424_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_05447_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_05450_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_05484_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_05724_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_05944_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_06162_" from metal2 to via1 in cell i2c_interface_component.
+Moving label "_06219_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "_06478_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_06550_" from metal1 to via1 in cell i2c_interface_component.
+Moving label "_06554_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_06635_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_06737_" from metal2 to via1 in cell i2c_interface_component.
+Moving label "_06908_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_07074_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_07212_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_07578_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_07658_" from metal2 to via1 in cell i2c_interface_component.
+Moving label "_07908_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_08002_" from metal1 to viali in cell i2c_interface_component.
+Moving label "_094_\[6\]" from metal1 to viali in cell i2c_interface_component.
+Moving label "clknet_leaf_130_p_clock" from metal1 to via1 in cell i2c_interface_component.
+Moving label "clknet_leaf_168_p_clock" from metal2 to via1 in cell i2c_interface_component.
+Moving label "clknet_leaf_195_p_clock" from metal1 to via1 in cell i2c_interface_component.
+Moving label "clknet_leaf_349_p_clock" from metal2 to via1 in cell i2c_interface_component.
+Moving label "i2c_master._43_" from metal2 to via1 in cell i2c_interface_component.
+Moving label "i2c_master._65_\[5\]" from metal3 to via3 in cell i2c_interface_component.
+Moving label "i2c_master.byte_ctrl._117_\[2\]" from metal1 to viali in cell i2c_interface_component.
+Moving label "i2c_master.byte_ctrl.bit_ctrl._118_" from metal2 to via2 in cell i2c_interface_component.
+Moving label "i2c_master.byte_ctrl.bit_ctrl._154_\[7\]" from metal1 to viali in cell i2c_interface_component.
+Moving label "memory._0290_\[2\]" from metal2 to via2 in cell i2c_interface_component.
+Moving label "memory._0294_\[1108\]" from metal1 to via1 in cell i2c_interface_component.
+Moving label "memory._0294_\[1225\]" from metal1 to via1 in cell i2c_interface_component.
+Moving label "memory._0294_\[1361\]" from metal1 to via1 in cell i2c_interface_component.
+Moving label "memory._0294_\[1372\]" from metal1 to via1 in cell i2c_interface_component.
+Moving label "memory._0294_\[1943\]" from metal1 to viali in cell i2c_interface_component.
+Moving label "memory._0294_\[2022\]" from metal1 to viali in cell i2c_interface_component.
+Moving label "memory._0294_\[2044\]" from metal1 to viali in cell i2c_interface_component.
+Moving label "memory._0294_\[239\]" from metal1 to via1 in cell i2c_interface_component.
+Moving label "memory._0294_\[39\]" from metal2 to via2 in cell i2c_interface_component.
+Moving label "memory._0294_\[4\]" from metal2 to via1 in cell i2c_interface_component.
+Moving label "memory._0294_\[558\]" from metal1 to via1 in cell i2c_interface_component.
+Moving label "memory._0294_\[684\]" from metal1 to via1 in cell i2c_interface_component.
+Moving label "memory._0294_\[80\]" from metal2 to via1 in cell i2c_interface_component.
+Moving label "memory._0294_\[841\]" from metal2 to via1 in cell i2c_interface_component.
+Moving label "memory._0294_\[846\]" from metal1 to viali in cell i2c_interface_component.
+Moving label "memory._0294_\[865\]" from metal1 to viali in cell i2c_interface_component.
+Moving label "memory._0294_\[900\]" from metal2 to via2 in cell i2c_interface_component.
+Moving label "memory._0294_\[955\]" from metal1 to via1 in cell i2c_interface_component.
+Moving label "net1238" from metal1 to viali in cell i2c_interface_component.
+Moving label "net135" from metal2 to via1 in cell i2c_interface_component.
+Moving label "net160" from metal2 to via1 in cell i2c_interface_component.
+Moving label "net20" from metal2 to via2 in cell i2c_interface_component.
+Moving label "net323" from metal1 to via1 in cell i2c_interface_component.
+Moving label "net325" from metal1 to via1 in cell i2c_interface_component.
+Moving label "net33" from metal2 to via1 in cell i2c_interface_component.
+Moving label "net419" from metal1 to viali in cell i2c_interface_component.
+Moving label "net448" from metal1 to viali in cell i2c_interface_component.
+Moving label "net808" from metal1 to viali in cell i2c_interface_component.
+Moving label "net859" from metal2 to via1 in cell i2c_interface_component.
+Moving label "net9" from metal2 to via1 in cell i2c_interface_component.
+Moving label "net908" from metal1 to viali in cell i2c_interface_component.
+[INFO]: Writing abstract LEF
+Generating LEF output /openlane/designs/i2c_interface_component/runs/test3/results/signoff/i2c_interface_component.lef for cell i2c_interface_component:
+Diagnostic:  Write LEF header for cell i2c_interface_component
+Diagnostic:  Writing LEF output for cell i2c_interface_component
+Diagnostic:  Scale value is 0.005000
+[INFO]: LEF Write Complete

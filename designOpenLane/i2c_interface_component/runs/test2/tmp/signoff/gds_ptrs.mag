@@ -1,0 +1,6 @@
+<< properties >>
+string FIXED_BBOX 0 0 130000 130000
+string GDS_END 34261338
+string GDS_FILE /openlane/designs/i2c_interface_component/runs/test2/results/signoff/i2c_interface_component.magic.gds
+string GDS_START 1051250
+<< end >>

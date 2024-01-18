@@ -1,0 +1,5 @@
+Warning: Yosys has only limited support for tri-state logic at the moment. (/openlane/designs/i2c_interface_component/src/i2c_interface_component.v:1147)
+Warning: Yosys has only limited support for tri-state logic at the moment. (/openlane/designs/i2c_interface_component/src/i2c_interface_component.v:1148)
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+Warning: Wire i2c_interface_component.\m_data_dump is used but has no driver.
+Warnings: 3 unique messages, 3 total

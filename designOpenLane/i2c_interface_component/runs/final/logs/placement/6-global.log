@@ -1,0 +1,156 @@
+OpenROAD 6f9b2bb8b808b1bb5831d4525d868212ae50517a 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO]: Reading ODB at '/openlane/designs/i2c_interface_component/runs/test3/results/floorplan/i2c_interface_component.odb'…
+define_corners Typical
+read_liberty -corner Typical /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+Reading design constraints file at '/openlane/scripts/base.sdc'…
+[INFO]: Setting output delay to: 2.0
+[INFO]: Setting input delay to: 2.0
+[INFO]: Setting load to: 0.033442
+[INFO]: Setting clock uncertainty to: 0.25
+[INFO]: Setting clock transition to: 0.15
+[INFO]: Setting timing derate to: 5.0 %
+[INFO]: Setting RC values...
+[INFO]: Setting signal min routing layer to: met1 and clock min routing layer to met1. 
+[INFO]: Setting signal max routing layer to: met5 and clock max routing layer to met5. 
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: 460 2720
+[INFO GPL-0004] CoreAreaLxLy: 920 5440
+[INFO GPL-0005] CoreAreaUxUy: 618700 612000
+[INFO GPL-0006] NumInstances: 16121
+[INFO GPL-0007] NumPlaceInstances: 10388
+[INFO GPL-0008] NumFixedInstances: 5733
+[INFO GPL-0009] NumDummyInstances: 0
+[INFO GPL-0010] NumNets: 10400
+[INFO GPL-0011] NumPins: 37314
+[INFO GPL-0012] DieAreaLxLy: 0 0
+[INFO GPL-0013] DieAreaUxUy: 620000 620000
+[INFO GPL-0014] CoreAreaLxLy: 920 5440
+[INFO GPL-0015] CoreAreaUxUy: 618700 612000
+[INFO GPL-0016] CoreArea: 374720636800
+[INFO GPL-0017] NonPlaceInstsArea: 8289200000
+[INFO GPL-0018] PlaceInstsArea: 125391510400
+[INFO GPL-0019] Util(%): 34.22
+[INFO GPL-0020] StdInstsArea: 125391510400
+[INFO GPL-0021] MacroInstsArea: 0
+[InitialPlace]  Iter: 1 CG residual: 0.00036152 HPWL: 106236510
+[InitialPlace]  Iter: 2 CG residual: 0.00046988 HPWL: 110616045
+[InitialPlace]  Iter: 3 CG residual: 0.00039923 HPWL: 111219627
+[InitialPlace]  Iter: 4 CG residual: 0.00041878 HPWL: 111719576
+[InitialPlace]  Iter: 5 CG residual: 0.00045647 HPWL: 111720389
+[InitialPlace]  Iter: 6 CG residual: 0.00043686 HPWL: 111878515
+[InitialPlace]  Iter: 7 CG residual: 0.00042459 HPWL: 111803918
+[InitialPlace]  Iter: 8 CG residual: 0.00042250 HPWL: 111901008
+[InitialPlace]  Iter: 9 CG residual: 0.00042082 HPWL: 111819758
+[InitialPlace]  Iter: 10 CG residual: 0.00043603 HPWL: 111919171
+[InitialPlace]  Iter: 11 CG residual: 0.00041654 HPWL: 111815089
+[InitialPlace]  Iter: 12 CG residual: 0.00040679 HPWL: 111909797
+[InitialPlace]  Iter: 13 CG residual: 0.00062251 HPWL: 111815762
+[InitialPlace]  Iter: 14 CG residual: 0.00043658 HPWL: 111910526
+[InitialPlace]  Iter: 15 CG residual: 0.00040761 HPWL: 111816210
+[InitialPlace]  Iter: 16 CG residual: 0.00045187 HPWL: 111919131
+[InitialPlace]  Iter: 17 CG residual: 0.00040889 HPWL: 111822043
+[InitialPlace]  Iter: 18 CG residual: 0.00040242 HPWL: 111909299
+[InitialPlace]  Iter: 19 CG residual: 0.00043535 HPWL: 111823967
+[InitialPlace]  Iter: 20 CG residual: 0.00045995 HPWL: 111912288
+[INFO GPL-0031] FillerInit: NumGCells: 10631
+[INFO GPL-0032] FillerInit: NumGNets: 10400
+[INFO GPL-0033] FillerInit: NumGPins: 37314
+[INFO GPL-0023] TargetDensity: 0.35
+[INFO GPL-0024] AveragePlaceInstArea: 12070803
+[INFO GPL-0025] IdealBinArea: 34488008
+[INFO GPL-0026] IdealBinCnt: 10865
+[INFO GPL-0027] TotalBinArea: 374720636800
+[INFO GPL-0028] BinCnt: 64 64
+[INFO GPL-0029] BinSize: 9653 9478
+[INFO GPL-0030] NumBins: 4096
+[NesterovSolve] Iter: 1 overflow: 0.995473 HPWL: 33264301
+[NesterovSolve] Iter: 10 overflow: 0.983826 HPWL: 36064381
+[NesterovSolve] Iter: 20 overflow: 0.979426 HPWL: 38796601
+[NesterovSolve] Iter: 30 overflow: 0.976887 HPWL: 39660009
+[NesterovSolve] Iter: 40 overflow: 0.97577 HPWL: 39987977
+[NesterovSolve] Iter: 50 overflow: 0.975446 HPWL: 40202733
+[NesterovSolve] Iter: 60 overflow: 0.974533 HPWL: 40431351
+[NesterovSolve] Iter: 70 overflow: 0.973323 HPWL: 40742386
+[NesterovSolve] Iter: 80 overflow: 0.972895 HPWL: 41059027
+[NesterovSolve] Iter: 90 overflow: 0.972072 HPWL: 41318563
+[NesterovSolve] Iter: 100 overflow: 0.971872 HPWL: 41559327
+[NesterovSolve] Iter: 110 overflow: 0.971793 HPWL: 41818382
+[NesterovSolve] Iter: 120 overflow: 0.971474 HPWL: 42160321
+[NesterovSolve] Iter: 130 overflow: 0.971182 HPWL: 42693454
+[NesterovSolve] Iter: 140 overflow: 0.970643 HPWL: 43666878
+[NesterovSolve] Iter: 150 overflow: 0.96911 HPWL: 45907285
+[NesterovSolve] Iter: 160 overflow: 0.968013 HPWL: 53197028
+[NesterovSolve] Iter: 170 overflow: 0.963101 HPWL: 69786426
+[NesterovSolve] Iter: 180 overflow: 0.958108 HPWL: 82473091
+[NesterovSolve] Iter: 190 overflow: 0.953219 HPWL: 91317004
+[NesterovSolve] Iter: 200 overflow: 0.943246 HPWL: 107919521
+[NesterovSolve] Iter: 210 overflow: 0.930378 HPWL: 128011243
+[NesterovSolve] Iter: 220 overflow: 0.915464 HPWL: 149138247
+[NesterovSolve] Iter: 230 overflow: 0.895692 HPWL: 174403202
+[NesterovSolve] Iter: 240 overflow: 0.870897 HPWL: 201692277
+[NesterovSolve] Iter: 250 overflow: 0.842888 HPWL: 230261928
+[NesterovSolve] Iter: 260 overflow: 0.807786 HPWL: 260957624
+[INFO GPL-0100] worst slack 4.55e-09
+[INFO GPL-0103] Weighted 1040 nets.
+[NesterovSolve] Iter: 270 overflow: 0.771304 HPWL: 292148389
+[NesterovSolve] Iter: 280 overflow: 0.735149 HPWL: 318379807
+[NesterovSolve] Iter: 290 overflow: 0.68337 HPWL: 349694209
+[NesterovSolve] Iter: 300 overflow: 0.632694 HPWL: 373160108
+[INFO GPL-0100] worst slack 4.36e-09
+[INFO GPL-0103] Weighted 1040 nets.
+[NesterovSolve] Snapshot saved at iter = 305
+[NesterovSolve] Iter: 310 overflow: 0.568908 HPWL: 391954127
+[NesterovSolve] Iter: 320 overflow: 0.499956 HPWL: 408752843
+[INFO GPL-0100] worst slack 4.2e-09
+[INFO GPL-0103] Weighted 1040 nets.
+[NesterovSolve] Iter: 330 overflow: 0.445385 HPWL: 429999219
+[NesterovSolve] Iter: 340 overflow: 0.395917 HPWL: 440575162
+[NesterovSolve] Iter: 350 overflow: 0.350095 HPWL: 442730698
+[NesterovSolve] Iter: 360 overflow: 0.318035 HPWL: 450633583
+[NesterovSolve] Iter: 370 overflow: 0.29055 HPWL: 451855478
+[INFO GPL-0100] worst slack 4.18e-09
+[INFO GPL-0103] Weighted 1040 nets.
+[NesterovSolve] Iter: 380 overflow: 0.259812 HPWL: 454318026
+[NesterovSolve] Iter: 390 overflow: 0.233836 HPWL: 455012877
+[NesterovSolve] Iter: 400 overflow: 0.205586 HPWL: 456016923
+[INFO GPL-0100] worst slack 4.01e-09
+[INFO GPL-0103] Weighted 1039 nets.
+[INFO GPL-0075] Routability numCall: 1 inflationIterCnt: 1 bloatIterCnt: 0
+[INFO GPL-0036] TileLxLy: 0 0
+[INFO GPL-0037] TileSize: 6900 6900
+[INFO GPL-0038] TileCnt: 89 89
+[INFO GPL-0039] numRoutingLayers: 6
+[INFO GPL-0040] NumTiles: 7921
+[INFO GPL-0063] TotalRouteOverflowH2: 0.40000009536743164
+[INFO GPL-0064] TotalRouteOverflowV2: 0.46666669845581055
+[INFO GPL-0065] OverflowTileCnt2: 7
+[INFO GPL-0066] 0.5%RC: 1.0059071733981748
+[INFO GPL-0067] 1.0%RC: 1.0029723993532218
+[INFO GPL-0068] 2.0%RC: 1.001486199676611
+[INFO GPL-0069] 5.0%RC: 1.0005952381357854
+[INFO GPL-0070] 0.5rcK: 1.0
+[INFO GPL-0071] 1.0rcK: 1.0
+[INFO GPL-0072] 2.0rcK: 0.0
+[INFO GPL-0073] 5.0rcK: 0.0
+[INFO GPL-0074] FinalRC: 1.0044398
+[NesterovSolve] Iter: 410 overflow: 0.180084 HPWL: 456610771
+[NesterovSolve] Iter: 420 overflow: 0.154409 HPWL: 457408522
+[INFO GPL-0100] worst slack 3.99e-09
+[INFO GPL-0103] Weighted 1040 nets.
+[NesterovSolve] Iter: 430 overflow: 0.133929 HPWL: 457855139
+[NesterovSolve] Iter: 440 overflow: 0.113488 HPWL: 458460408
+[NesterovSolve] Finished with Overflow: 0.099741
+Setting global connections for newly added cells…
+Writing OpenROAD database to '/openlane/designs/i2c_interface_component/runs/test3/tmp/placement/7-global.odb'…
+Writing netlist to '/openlane/designs/i2c_interface_component/runs/test3/tmp/placement/7-global.nl.v'…
+Writing powered netlist to '/openlane/designs/i2c_interface_component/runs/test3/tmp/placement/7-global.pnl.v'…
+Writing layout to '/openlane/designs/i2c_interface_component/runs/test3/tmp/placement/7-global.def'…

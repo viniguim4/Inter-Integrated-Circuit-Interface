@@ -1,0 +1,140 @@
+%Warning-UNUSEDSIGNAL: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:20:15: Bits of signal are not used: '_016_'[31:8]
+                                                                                                    : ... note: In instance 'i2c_interface_component'
+   20 |   wire [31:0] _016_;
+      |               ^~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.018
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:24:15: Bits of signal are not used: '_020_'[31:8]
+                                                                                                    : ... note: In instance 'i2c_interface_component'
+   24 |   wire [31:0] _020_;
+      |               ^~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:137:8: Signal is not used: '_133_'
+                                                                                                    : ... note: In instance 'i2c_interface_component'
+  137 |   wire _133_;
+      |        ^~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2809:7: Case conditions overlap (example pattern 0x3)
+ 2809 |       8'b??????1?:
+      |       ^~~~~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2807:7: ... Location of overlapping condition
+ 2807 |       8'b???????1:
+      |       ^~~~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2842:7: Case conditions overlap (example pattern 0x3)
+ 2842 |       5'b???1?:
+      |       ^~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2840:7: ... Location of overlapping condition
+ 2840 |       5'b????1:
+      |       ^~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2863:7: Case conditions overlap (example pattern 0x3)
+ 2863 |       5'b???1?:
+      |       ^~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2861:7: ... Location of overlapping condition
+ 2861 |       5'b????1:
+      |       ^~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2884:7: Case conditions overlap (example pattern 0x3)
+ 2884 |       5'b???1?:
+      |       ^~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2882:7: ... Location of overlapping condition
+ 2882 |       5'b????1:
+      |       ^~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2905:7: Case conditions overlap (example pattern 0x3)
+ 2905 |       5'b???1?:
+      |       ^~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2903:7: ... Location of overlapping condition
+ 2903 |       5'b????1:
+      |       ^~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2328:7: Case conditions overlap (example pattern 0x3)
+ 2328 |       6'b????1?:
+      |       ^~~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2326:7: ... Location of overlapping condition
+ 2326 |       6'b?????1:
+      |       ^~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2351:7: Case conditions overlap (example pattern 0x3)
+ 2351 |       6'b????1?:
+      |       ^~~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2349:7: ... Location of overlapping condition
+ 2349 |       6'b?????1:
+      |       ^~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2374:7: Case conditions overlap (example pattern 0x3)
+ 2374 |       6'b????1?:
+      |       ^~~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2372:7: ... Location of overlapping condition
+ 2372 |       6'b?????1:
+      |       ^~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2397:7: Case conditions overlap (example pattern 0x3)
+ 2397 |       6'b????1?:
+      |       ^~~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2395:7: ... Location of overlapping condition
+ 2395 |       6'b?????1:
+      |       ^~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2420:7: Case conditions overlap (example pattern 0x3)
+ 2420 |       6'b????1?:
+      |       ^~~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2418:7: ... Location of overlapping condition
+ 2418 |       6'b?????1:
+      |       ^~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2443:7: Case conditions overlap (example pattern 0x3)
+ 2443 |       6'b????1?:
+      |       ^~~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2441:7: ... Location of overlapping condition
+ 2441 |       6'b?????1:
+      |       ^~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2466:7: Case conditions overlap (example pattern 0x3)
+ 2466 |       6'b????1?:
+      |       ^~~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2464:7: ... Location of overlapping condition
+ 2464 |       6'b?????1:
+      |       ^~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2489:7: Case conditions overlap (example pattern 0x3)
+ 2489 |       6'b????1?:
+      |       ^~~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2487:7: ... Location of overlapping condition
+ 2487 |       6'b?????1:
+      |       ^~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2512:7: Case conditions overlap (example pattern 0x3)
+ 2512 |       6'b????1?:
+      |       ^~~~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:2510:7: ... Location of overlapping condition
+ 2510 |       6'b?????1:
+      |       ^~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:1589:7: Case conditions overlap (example pattern 0x3)
+ 1589 |       4'b??1?:
+      |       ^~~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:1587:7: ... Location of overlapping condition
+ 1587 |       4'b???1:
+      |       ^~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5208:7: Case conditions overlap (example pattern 0x3)
+ 5208 |       3'b?1?:
+      |       ^~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5206:7: ... Location of overlapping condition
+ 5206 |       3'b??1:
+      |       ^~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5225:7: Case conditions overlap (example pattern 0x3)
+ 5225 |       3'b?1?:
+      |       ^~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5223:7: ... Location of overlapping condition
+ 5223 |       3'b??1:
+      |       ^~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5242:7: Case conditions overlap (example pattern 0x3)
+ 5242 |       3'b?1?:
+      |       ^~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5240:7: ... Location of overlapping condition
+ 5240 |       3'b??1:
+      |       ^~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5259:7: Case conditions overlap (example pattern 0x3)
+ 5259 |       3'b?1?:
+      |       ^~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5257:7: ... Location of overlapping condition
+ 5257 |       3'b??1:
+      |       ^~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5276:7: Case conditions overlap (example pattern 0x3)
+ 5276 |       3'b?1?:
+      |       ^~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5274:7: ... Location of overlapping condition
+ 5274 |       3'b??1:
+      |       ^~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5293:7: Case conditions overlap (example pattern 0x3)
+ 5293 |       3'b?1?:
+      |       ^~~~~~
+                      /openlane/designs/i2c_interface_component/src/i2c_interface_component.v:5291:7: ... Location of overlapping condition
+ 5291 |       3'b??1:
+      |       ^~~~~~

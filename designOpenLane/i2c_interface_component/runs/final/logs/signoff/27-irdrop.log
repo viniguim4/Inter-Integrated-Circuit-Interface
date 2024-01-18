@@ -1,0 +1,44 @@
+OpenROAD 6f9b2bb8b808b1bb5831d4525d868212ae50517a 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO]: Reading ODB at '/openlane/designs/i2c_interface_component/runs/test3/results/routing/i2c_interface_component.odb'…
+define_corners Typical
+read_liberty -corner Typical /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+[INFO] Setting operating conditions to 'tt_025C_1v80'…
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+Reading design constraints file at '/openlane/scripts/base.sdc'…
+[INFO]: Setting output delay to: 2.0
+[INFO]: Setting input delay to: 2.0
+[INFO]: Setting load to: 0.033442
+[INFO]: Setting clock uncertainty to: 0.25
+[INFO]: Setting clock transition to: 0.15
+[INFO]: Setting timing derate to: 5.0 %
+[INFO]: Setting RC values...
+[INFO PSM-0022] Using 1.800V for vccd1
+[INFO PSM-0076] Setting metal node density to be standard cell height times 5.
+[INFO PSM-0031] Number of PDN nodes on net vccd1 = 8832.
+[INFO PSM-0064] Number of voltage sources = 348.
+[INFO PSM-0040] All PDN stripes on net vccd1 are connected.
+########## IR report #################
+Corner: Typical
+Worstcase voltage: 1.80e+00 V
+Average IR drop  : 4.52e-04 V
+Worstcase IR drop: 3.34e-03 V
+######################################
+[INFO PSM-0022] Using 0.000V for vssd1
+[INFO PSM-0076] Setting metal node density to be standard cell height times 5.
+[INFO PSM-0031] Number of PDN nodes on net vssd1 = 8720.
+[INFO PSM-0064] Number of voltage sources = 348.
+[INFO PSM-0040] All PDN stripes on net vssd1 are connected.
+########## IR report #################
+Corner: Typical
+Worstcase voltage: 3.46e-03 V
+Average IR drop  : 4.39e-04 V
+Worstcase IR drop: 3.46e-03 V
+######################################

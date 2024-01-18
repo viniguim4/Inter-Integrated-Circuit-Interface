@@ -1,0 +1,28 @@
+
+53. Printing statistics.
+
+=== i2c_interface_component ===
+
+   Number of wires:               6783
+   Number of wire bits:           9391
+   Number of public wires:         165
+   Number of public wire bits:    2662
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               9210
+     $_ANDNOT_                     800
+     $_AND_                         64
+     $_MUX_                       4456
+     $_NAND_                       103
+     $_NOR_                         72
+     $_NOT_                         51
+     $_ORNOT_                       66
+     $_OR_                        1045
+     $_XNOR_                        40
+     $_XOR_                        129
+     sky130_fd_sc_hd__dfrtp_2     2252
+     sky130_fd_sc_hd__dfstp_2       54
+     sky130_fd_sc_hd__dfxtp_2       76
+     sky130_fd_sc_hd__ebufn_2        2
+

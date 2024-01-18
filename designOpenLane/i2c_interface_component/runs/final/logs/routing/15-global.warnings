@@ -1,0 +1,83 @@
+[WARNING GRT-0036] Pin SCL is outside die area.
+[WARNING GRT-0036] Pin SDA is outside die area.
+[WARNING GRT-0036] Pin component_mode is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[0] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[1] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[2] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[3] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[4] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[5] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[6] is outside die area.
+[WARNING GRT-0036] Pin i2c_read_e is outside die area.
+[WARNING GRT-0036] Pin m_data_dump is outside die area.
+[WARNING GRT-0036] Pin m_start_dump is outside die area.
+[WARNING GRT-0036] Pin p_clock is outside die area.
+[WARNING GRT-0036] Pin p_reset is outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0036] Pin SDA is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[6] is outside die area.
+[WARNING GRT-0036] Pin m_start_dump is outside die area.
+[WARNING GRT-0036] Pin p_clock is outside die area.
+[WARNING GRT-0036] Pin SDA is outside die area.
+[WARNING GRT-0036] Pin SCL is outside die area.
+[WARNING GRT-0036] Pin SDA is outside die area.
+[WARNING GRT-0036] Pin component_mode is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[0] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[1] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[2] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[3] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[4] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[5] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[6] is outside die area.
+[WARNING GRT-0036] Pin i2c_read_e is outside die area.
+[WARNING GRT-0036] Pin m_data_dump is outside die area.
+[WARNING GRT-0036] Pin m_start_dump is outside die area.
+[WARNING GRT-0036] Pin p_clock is outside die area.
+[WARNING GRT-0036] Pin p_reset is outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.

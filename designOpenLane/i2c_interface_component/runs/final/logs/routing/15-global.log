@@ -1,0 +1,264 @@
+OpenROAD 6f9b2bb8b808b1bb5831d4525d868212ae50517a 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO]: Reading ODB at '/openlane/designs/i2c_interface_component/runs/test3/tmp/cts/14-i2c_interface_component.resized.odb'…
+define_corners Typical
+read_liberty -corner Typical /home/viniguima/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+Reading design constraints file at '/openlane/scripts/base.sdc'…
+[INFO]: Setting output delay to: 2.0
+[INFO]: Setting input delay to: 2.0
+[INFO]: Setting load to: 0.033442
+[INFO]: Setting clock uncertainty to: 0.25
+[INFO]: Setting clock transition to: 0.15
+[INFO]: Setting timing derate to: 5.0 %
+[INFO]: Setting signal min routing layer to: met1 and clock min routing layer to met1. 
+[INFO]: Setting signal max routing layer to: met5 and clock max routing layer to met5. 
+-congestion_iterations 50 -verbose -congestion_report_file /openlane/designs/i2c_interface_component/runs/test3/tmp/routing/groute-congestion.rpt
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0019] Found 424 clock nets.
+[WARNING GRT-0036] Pin SCL is outside die area.
+[WARNING GRT-0036] Pin SDA is outside die area.
+[WARNING GRT-0036] Pin component_mode is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[0] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[1] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[2] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[3] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[4] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[5] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[6] is outside die area.
+[WARNING GRT-0036] Pin i2c_read_e is outside die area.
+[WARNING GRT-0036] Pin m_data_dump is outside die area.
+[WARNING GRT-0036] Pin m_start_dump is outside die area.
+[WARNING GRT-0036] Pin p_clock is outside die area.
+[WARNING GRT-0036] Pin p_reset is outside die area.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 15
+[INFO GRT-0003] Macros: 0
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[INFO GRT-0004] Blockages: 34062
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal     159933         75216          52.97%
+met2       Vertical       119883         78876          34.21%
+met3       Horizontal      79922         55019          31.16%
+met4       Vertical        48149         30448          36.76%
+met5       Horizontal      15931          7656          51.94%
+---------------------------------------------------------------
+
+[INFO GRT-0101] Running extra iterations to remove overflow.
+[INFO GRT-0197] Via related to pin nodes: 51046
+[INFO GRT-0198] Via related Steiner nodes: 3135
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 61620
+[INFO GRT-0112] Final usage 3D: 286918
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1             75216         40706           54.12%             0 /  0 /  0
+met2             78876         43707           55.41%             0 /  0 /  0
+met3             55019          9747           17.72%             0 /  0 /  0
+met4             30448          7833           25.73%             0 /  0 /  0
+met5              7656            65            0.85%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total           247215        102058           41.28%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 934749 um
+[INFO GRT-0014] Routed nets: 12509
+[INFO GRT-0006] Repairing antennas, iteration 1.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 170 antenna violations.
+[INFO GRT-0015] Inserted 242 diodes.
+[INFO GRT-0009] rerouting 8270 nets.
+[WARNING GRT-0036] Pin SDA is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[6] is outside die area.
+[WARNING GRT-0036] Pin m_start_dump is outside die area.
+[WARNING GRT-0036] Pin p_clock is outside die area.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 16
+[INFO GRT-0006] Repairing antennas, iteration 2.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 84 antenna violations.
+[INFO GRT-0015] Inserted 103 diodes.
+[INFO GRT-0009] rerouting 567 nets.
+[WARNING GRT-0036] Pin SDA is outside die area.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 16
+[INFO GRT-0006] Repairing antennas, iteration 3.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 24 antenna violations.
+[INFO GRT-0015] Inserted 32 diodes.
+[INFO GRT-0009] rerouting 118 nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 16
+[INFO GRT-0006] Repairing antennas, iteration 4.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 2 nets.
+[INFO GRT-0001] Minimum degree: 5
+[INFO GRT-0002] Maximum degree: 15
+[INFO GRT-0006] Repairing antennas, iteration 5.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 1 antenna violations.
+[INFO GRT-0015] Inserted 1 diodes.
+[INFO GRT-0009] rerouting 1 nets.
+[INFO GRT-0001] Minimum degree: 6
+[INFO GRT-0002] Maximum degree: 6
+[INFO GRT-0006] Repairing antennas, iteration 6.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 0 antenna violations.
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL          547789.7 u
+legalized HPWL         547789.7 u
+delta HPWL                    0 %
+
+[INFO DPL-0020] Mirrored 4375 instances
+[INFO DPL-0021] HPWL before          547789.7 u
+[INFO DPL-0022] HPWL after           539526.6 u
+[INFO DPL-0023] HPWL delta               -1.5 %
+[INFO]: Setting signal min routing layer to: met1 and clock min routing layer to met1. 
+[INFO]: Setting signal max routing layer to: met5 and clock max routing layer to met5. 
+-congestion_iterations 50 -verbose -congestion_report_file /openlane/designs/i2c_interface_component/runs/test3/tmp/routing/groute-congestion.rpt
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0019] Found 424 clock nets.
+[WARNING GRT-0036] Pin SCL is outside die area.
+[WARNING GRT-0036] Pin SDA is outside die area.
+[WARNING GRT-0036] Pin component_mode is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[0] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[1] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[2] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[3] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[4] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[5] is outside die area.
+[WARNING GRT-0036] Pin i2c_addr_i[6] is outside die area.
+[WARNING GRT-0036] Pin i2c_read_e is outside die area.
+[WARNING GRT-0036] Pin m_data_dump is outside die area.
+[WARNING GRT-0036] Pin m_start_dump is outside die area.
+[WARNING GRT-0036] Pin p_clock is outside die area.
+[WARNING GRT-0036] Pin p_reset is outside die area.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 16
+[INFO GRT-0003] Macros: 0
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vccd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[WARNING GRT-0040] Net vssd1 has wires outside die area.
+[INFO GRT-0004] Blockages: 34062
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal     159933         75216          52.97%
+met2       Vertical       119883         78876          34.21%
+met3       Horizontal      79922         55019          31.16%
+met4       Vertical        48149         30448          36.76%
+met5       Horizontal      15931          7656          51.94%
+---------------------------------------------------------------
+
+[INFO GRT-0101] Running extra iterations to remove overflow.
+[INFO GRT-0197] Via related to pin nodes: 51438
+[INFO GRT-0198] Via related Steiner nodes: 3125
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 62041
+[INFO GRT-0112] Final usage 3D: 288394
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1             75216         41020           54.54%             0 /  0 /  0
+met2             78876         43599           55.28%             0 /  0 /  0
+met3             55019          9563           17.38%             0 /  0 /  0
+met4             30448          7971           26.18%             0 /  0 /  0
+met5              7656           118            1.54%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total           247215        102271           41.37%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 937903 um
+[INFO GRT-0014] Routed nets: 12509
+Setting global connections for newly added cells…
+Writing OpenROAD database to '/openlane/designs/i2c_interface_component/runs/test3/tmp/routing/15-global.odb'…
+Writing layout to '/openlane/designs/i2c_interface_component/runs/test3/tmp/routing/15-global.def'…
+Writing routing guides to '/openlane/designs/i2c_interface_component/runs/test3/tmp/routing/15-global.guide'…
